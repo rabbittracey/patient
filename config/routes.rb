@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+
+  devise_for :users
   get 'welcome/index'
 
-  devise_for :admin
-  devise_for :user
   
   root  "welcome#index"
   
