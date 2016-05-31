@@ -1,3 +1,67 @@
-<h1>Design a welcome page </h1>
 
-<%= link_to "Immunization list", controller: "immunizations" %>
+
+
+<div class="container">
+  <h2>Welcome! Please choose your login style</h2>
+
+
+  <div class="row">
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+
+
+          <h4>Sign in as a provider</h4>
+          <img class="img-circle" src="images/patient.jpg" alt="Patient" width="300" height="236" >
+
+
+
+
+
+        <div class="row">
+          <div class="col-xs-4">
+            <%= link_to("Sign In", new_immunization_path, class: "btn btn-block btn-info ") %>
+          </div>
+          <div class="col-xs-4">
+            <%= link_to("Sign Up", new_immunization_path, class: "btn btn-block btn-danger ") %>
+          </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="col-sm-6 col-md-6 col-lg-6">
+
+
+      <h4>Sign in as a provider</h4>
+      <img class="img-circle" src="images/doctor.png" alt="Provider" width="300" height="236" >
+
+
+
+
+
+      <div class="row">
+        <div class="col-xs-4">
+          <%= link_to("Sign In", new_immunization_path, class: "btn btn-block btn-warning ") %>
+        </div>
+        <div class="col-xs-4">
+          <%= link_to("Sign Up", new_immunization_path, class: "btn btn-block btn-primary ") %>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+  </div>
+
+
+
+
+
