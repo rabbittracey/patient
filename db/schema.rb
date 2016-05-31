@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531132841) do
+ActiveRecord::Schema.define(version: 20160531183031) do
+
+  create_table "basic_informations", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "prefix"
+    t.string   "postfix"
+    t.string   "gender"
+    t.date     "birthday"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "country"
+    t.integer  "phone_number"
+    t.string   "email"
+    t.text     "password"
+    t.text     "password_confirmation"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "patient_immunizations", force: :cascade do |t|
     t.string   "patient_id",              limit: 30
@@ -27,6 +45,11 @@ ActiveRecord::Schema.define(version: 20160531132841) do
     t.datetime "updated_at"
   end
 
+  create_table "patients", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -40,6 +63,9 @@ ActiveRecord::Schema.define(version: 20160531132841) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "fname"
+    t.string   "country"
+    t.string   "lname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
