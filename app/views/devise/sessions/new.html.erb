@@ -1,3 +1,8 @@
+<div class="page-header">
+  <h2>Please input your log in information</h2>
+</div>
+
+
 
 <div class="container">
 
@@ -7,43 +12,59 @@
 
 
 
-  <div class="container">
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
 
-        <h2>Please input your log in information</h2>
-        <form class="form-inline" role="form">
 
+ <form  role="form" class="form-inline">
 
-
+<div class="row">
+ <div class="col-xs-12 col-sm-6">
   <div class="form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, :class=> "form-control" %>
   </div>
-  <br/>
+ </div>
+  <div class="col-xs-12 col-sm-6">
   <div class="form-group">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off", :class=> "form-control"%>
   </div>
-  <br/>
-  <% if devise_mapping.rememberable? -%>
-    <div class="form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-  <br/>
-  <div class="actions">
-    <%= f.submit "Log in", :class=> "btn btn-primary form-control"%>
-  </div>
-<% end %>
-    <div class="form-group">
-      <div class="row">
-  <%= render "devise/shared/links" %>
-      </div>
-     </div>
-  </form>
+</div>
+
   </div>
 
+
+<div class="row">
+ <div class="col-xs-6 col-sm-4 col-md-4">
+  <div class="form-group">
+  <% if devise_mapping.rememberable? -%>
+
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+
+  <% end -%>
+  </div>
+   </div>
+
+   <div class="col-xs-12 col-sm-8 col-md-8">
+   <div class="actions">
+      <%= f.submit "Log in", :class=> "btn btn-primary form-control"%>
+    </div>
+   </div>
 </div>
+
+<% end %>
+
+  </form>
+ </div>
+ <div class="container">
+
+    <div class="row">
+  <%= render "devise/shared/links" %>
+     </div>
+
+ </div>
+
