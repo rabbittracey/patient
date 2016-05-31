@@ -1,0 +1,46 @@
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  adapter: sqlite3
+  database: db/efa_patient_engagement.sqlite3
+  pool: 5
+  timeout: 5000
+
+
+
+  #adapter: sqlite
+  #encoding: utf8
+  #reconnect: false
+  #database: superHL7
+  #pool: 5
+  #username: test
+  #password: testDB
+  #host: localhost
+  #port: 3306
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: super_hl7
+  pool: 5
+  username: development
+  password: DevTeam01!
+  host: 10.0.80.170
+  port: 3306
+
+#development:
+   #adapter: mysql2
+   #encoding: utf8
+   #reconnect: false
+   #database: super_hl7
+   #pool: 5
+   #username: Development
+   #password: DevTeam01!
+   #host: 10.0.80.185
+   #port: 3306

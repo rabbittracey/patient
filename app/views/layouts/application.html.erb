@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Project" %>">
+	<title><%= content_for?(:title) ? yield(:title) : "Predictive Population System" %></title>
+	
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<!-- Pre requirement for Piwik Web Analystic -->
+	<!-- Need to Change the Ip address to the server's address in piwik.js -->
+	<!-- The belowed include the information about how to installing the Piwik on Linux -->
+	<!-- http://www.howtoforge.com/installing-apache2-with-php5-and-mysql-support-on-debian-lenny-lamp -->
+	<%= javascript_include_tag "piwik" %>
+	<link rel="shortcut icon" href="/efhs.ico"/>
+	<%= csrf_meta_tags %>
+	<%= yield(:head) %>
+</head>
+
+<body class="<%= controller_name %> <%= action_name %>">
+	<div class="navbar navbar-inverse navbar-fixed-top shadow-default" role="navigation">
+		<div class="container-fluid" style="margin-top: 12px;">
+			<%= render 'layouts/navigation' %>
+		</div>
+	</div>
+	<% if user_signed_in? %>
+		<!-- <div id="main" role="main"> -->
+<!-- 			<div class="container-fluid container-auto"> -->
+			<!-- <div class="content"> -->
+			<div class="conatiner-fluid">
+				<div class="row row-offcanvas row-offcanvas-left" style="margin-top: -50px;">
+					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-2 sidebar-offcanvas" id="sidebar" role="navigation" style="padding-right: 0px; z-index: 10;">
+						<div style="box-shadow: 1px 0px 5px #888888;">
+							<%= render "home/siderbar" %>	
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 reset_padding_left_right" style="z-index: 5;">
+						<%= yield %>
+					</div>
+				</div>	
+			</div>
+	<% else %>
+		
+		<%= yield %>
+		<!-- <div id="main" role="main">
+			<div class="container-fluid container-auto">
+				<div class="content">
+				<%#= yield %>
+				</div>
+			</div>
+		</div> -->
+	<% end %>
+	<!-- the below is to hold the modal in bootstrap so that there is no more display issue -->
+	<!-- check  http://stackoverflow.com/questions/10636667/bootstrap-modal-appearing-under-background -->
+	<%= yield(:place_for_modal) %>
+</body>
+</html>

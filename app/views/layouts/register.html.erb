@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Project" %>">
+	<title><%= content_for?(:title) ? yield(:title) : "Predictive Population System" %></title>
+	<%= include_gon(:init => true) %>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<!-- Pre requirement for Piwik Web Analystic -->
+	<!-- Need to Change the Ip address to the server's address in piwik.js -->
+	<!-- The belowed include the information about how to installing the Piwik on Linux -->
+	<!-- http://www.howtoforge.com/installing-apache2-with-php5-and-mysql-support-on-debian-lenny-lamp -->
+	<%= javascript_include_tag "piwik" %>
+	<link rel="shortcut icon" href="/efhs.ico"/>
+	<%= csrf_meta_tags %>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+	<%= yield(:head) %>
+</head>
+
+<body class="register-page">
+	<div class="register-box">
+		<div class="register-logo">
+        	<a href="#"><b>Sign Up</b> EagleForce</a>
+      	</div><!-- /.login-logo -->
+      	<div class="register-box-body">
+      		<%= yield %>
+      	</div>
+	</div><!-- /.login-box -->
+
+	<!-- Morris.js charts -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+      });
+    </script>
+	<!-- the below is to hold the modal in bootstrap so that there is no more display issue -->
+	<!-- check  http://stackoverflow.com/questions/10636667/bootstrap-modal-appearing-under-background -->
+	<%= yield(:place_for_modal) %>
+</body>
+</html>
