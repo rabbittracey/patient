@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531193257) do
+ActiveRecord::Schema.define(version: 20160601211650) do
 
   create_table "basic_informations", force: :cascade do |t|
     t.string   "firstname"
@@ -46,8 +46,39 @@ ActiveRecord::Schema.define(version: 20160531193257) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "middle_name"
+    t.string   "home_phone_number"
+    t.string   "cell_phone_number"
+    t.string   "hicn"
+    t.string   "secondary_insurance_id"
+    t.string   "air_quality"
+    t.string   "water_quality"
+    t.string   "weather"
+    t.string   "smoker"
+    t.float    "tobacco_quantity_per_week"
+    t.float    "alcohol_beverages_weekly"
+    t.float    "weekly_sodium_intake"
+    t.float    "hours_of_exercise_weekly"
+    t.float    "daily_calories"
+    t.float    "daily_sugar_intake"
+    t.float    "daily_fat_intake"
+    t.integer  "distance_from_pharmacy"
+    t.integer  "distance_from_provider"
+    t.string   "sensor_use"
+    t.string   "car_owner"
+    t.integer  "child_had"
+    t.integer  "suspected_drug_abuse"
+    t.string   "marital_status"
+    t.string   "patient_email"
+    t.string   "patient_street_address"
+    t.string   "patient_city"
+    t.string   "patient_state"
+    t.string   "patient_zipcode"
+    t.string   "patient_image_file_path"
   end
 
   create_table "users", force: :cascade do |t|
