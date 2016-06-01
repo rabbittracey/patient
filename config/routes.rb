@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   
   root  "welcome#index"
-  
+
+
+  resources :patients
+  resources :providers
   resources :immunizations
 
   resources :sign_up

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Project" %>">
+	<title><%= content_for?(:title) ? yield(:title) : "Predictive Population System" %></title>
+
+	<%= stylesheet_link_tag "application1", :media => "all" %>
+	<%= javascript_include_tag "application1" %>
+	<%= javascript_include_tag "piwik" %>
+	<link rel="shortcut icon" href="/efhs.ico"/>
+	<%= csrf_meta_tags %>
+	<%= yield(:head) %>
+</head>
+
+<body >
+
+		<%= yield %>
+		
+</body>
+</html>
