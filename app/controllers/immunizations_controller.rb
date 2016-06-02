@@ -3,16 +3,16 @@ class ImmunizationsController < ApplicationController
 
 	
 	def new
-		@immunization=PatientImmunization.new
+		@immunization=Immunization.new
 	end
 
 	def index
-		@immunizations=PatientImmunization.all
+		@immunizations=Immunization.all
 
     end
 
     def create
-    	@immunization=PatientImmunization.new(immunization_params)
+    	@immunization=Immunization.new(immunization_params)
 
     	if @immunization.save
     		redirect_to @immunization
@@ -23,14 +23,14 @@ class ImmunizationsController < ApplicationController
 
 
     def show
-    	@immunization=PatientImmunization.find(params[:id])
+    	@immunization=Immunization.find(params[:id])
     end	
     def edit
-    	@immunization=PatientImmunization.find(params[:id])
+    	@immunization=Immunization.find(params[:id])
     end	
 
     def update
-    	@immunization=PatientImmunization.find(params[:id])
+    	@immunization=Immunization.find(params[:id])
     	if @immunizations.update(immunization_params)
     		 redirect_to @immunization
         else 
@@ -41,7 +41,7 @@ class ImmunizationsController < ApplicationController
 
     end
     def destroy
-    	@immunization=PatientImmunization.find(params[:id])
+    	@immunization=Immunization.find(params[:id])
     	@immunization.destroy
     	redirect_to immunizations_path
 

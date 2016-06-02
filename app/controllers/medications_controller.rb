@@ -1,18 +1,18 @@
-class MedicationsController < ApplicationController
+class ImmunizationsController < ApplicationController
 
 
 
   def new
-    @medication=Medication.new
+    @medication=Immunization.new
   end
 
   def index
-    @medications=Medication.all
+    @medications=Immunization.all
 
   end
 
   def create
-    @medication=Medication.new(immunization_params)
+    @medication=Immunization.new(medication_params)
 
     if @medication.save
       redirect_to @medication
@@ -23,15 +23,15 @@ class MedicationsController < ApplicationController
 
 
   def show
-    @medication=Medication.find(params[:id])
+    @medication=Immunization.find(params[:id])
   end
   def edit
-    @medication=Medication.find(params[:id])
+    @medication=Immunization.find(params[:id])
   end
 
   def update
-    @medication=Medication.find(params[:id])
-    if @medications.update(immunization_params)
+    @medication=Immunization.find(params[:id])
+    if @medications.update(medication_params)
       redirect_to @medication
     else
       render 'edit'
@@ -41,17 +41,18 @@ class MedicationsController < ApplicationController
 
   end
   def destroy
-    @medication=Medication.find(params[:id])
+    @medication=Immunization.find(params[:id])
     @medication.destroy
-    redirect_to immunizations_path
+    redirect_to medications_path
 
   end
 
 
   private
-  def immunization_params
-    params.require(:immunization).permit(:patient_id, :administrator, :date_administered, :reimmunization_due_date, :notes, :ndc,  :cpt_code,  :cvx_codx, :hcpcs_code)
+  def medication_params
+    params.require(:medication).permit(:patient_id, :administrator, :date_administered, :remedication_due_date, :notes, :ndc,  :cpt_code,  :cvx_codx, :hcpcs_code)
   end
+
 
 
 

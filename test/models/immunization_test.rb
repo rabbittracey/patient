@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PatientImmunizationTest < ActiveSupport::TestCase
+class ImmunizationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
