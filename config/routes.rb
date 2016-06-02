@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'user/new'
+
+  get 'user/edit'
+
   devise_for :users
   get 'welcome/index'
 

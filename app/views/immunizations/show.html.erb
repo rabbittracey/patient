@@ -93,7 +93,7 @@
                 <%= link_to "Edit", edit_immunization_path(@immunization), class: "btn btn-block btn-primary" %>
             </div>
        <div class="col-sm-2">
-          <%= link_to 'Delete', immunizations_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-block btn-danger"  %>
+          <%= link_to 'Delete', immunization_path(@immunization), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-block btn-danger"  %>
   	
       </div>
   

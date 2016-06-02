@@ -10,11 +10,12 @@
       <form role="form">
         <h2>Please Sign Up</h2>
 
-        <h3 class="text-center text-info"> basic infromation</h3>
+        <h3 class="text-center text-info"> Basic Information</h3>
         <hr class="colorgraph">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
+              <%= text_area_tag(:fname, "First Name",class: "form-control input-lg")%>
               <input type="string" class="form-control input-lg" id="fname" placeholder="First Name" tabindex="1">
             </div>
           </div>
