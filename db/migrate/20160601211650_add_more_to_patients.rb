@@ -1,7 +1,7 @@
 class AddMoreToPatients < ActiveRecord::Migration
     def change
 
-     
+
       
       add_column :patients, :middle_name,               :string
       add_column :patients, :home_phone_number,        :string
