@@ -1,0 +1,111 @@
+
+
+
+
+
+
+
+
+
+<h1>This page is for showing the specific medication record </h1>
+
+
+  	
+ 
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="text-center">
+                <i class="fa fa-search-plus pull-left icon"></i>
+                <h2>Immunization Information</h2>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 col-md-4 col-lg-4 pull-left">
+                    <div class="panel panel-default height">
+                          
+                            <div class="panel-heading">Basic Information</div>
+
+                                 <table class="table table-hover ">
+    
+                                        <tbody>
+                                          <tr class="success">
+                                            <td>Administrator:</td> 
+                                            <td><%=@medication.administrator%></td>
+                                          </tr>
+                                          <tr class="danger">
+                                            <td>Date Administrated:</td>  
+                                            <td><%=@medication.date_administered%></td>                      
+                                          </tr>
+                                          <tr class="info">
+                                            <td>Deadline for Remedication</td>  
+                                            <td><%=@medication.remedication_due_date%></td                                        
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                              
+                    </div>
+              </div>
+              
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Detailed Information</div>
+                                                <table class="table table-hover ">
+    
+                                        <tbody>
+                                          <tr class="success">
+                                            <td>NDC code:</td> 
+                                             <td><%=@medication.ndc%></td>
+                                          </tr>
+                                          <tr class="danger">
+                                            <td>CPT code:</td>  
+                                           <td><%=@medication.cpt_code%> </td>                     
+                                          </tr>
+                                          <tr class="info">
+                                            <td>CVX code:</td>  
+                                            <td><%=@medication.cvx_codx%></td>                                        
+                                          </tr>
+                                          <tr class="warning">
+                                            <td>HCPCS code</td>  
+                                            <td><%=@medication.hcpcs_code%></td>                                         
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
+                                                
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4 pull-right">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Comments</div>
+                        <div class="panel panel-default">
+                          <div><%=@medication.notes%></div>
+                         
+                         </div>
+                        
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+             	<div class="col-sm-2">
+  	
+                <%= link_to "Edit", edit_medication_path(@medication), class: "btn btn-block btn-primary" %>
+            </div>
+       <div class="col-sm-2">
+          <%= link_to 'Delete', medications_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-block btn-danger"  %>
+  	
+      </div>
+  
+  <div class="col-sm-2">
+
+     <%= link_to("Cancel", medications_path, class: "btn btn-block btn-warning ") %>
+  	
+  </div>
+             </div>
+        </div>
+    </div>
+    
+
+
+  

@@ -1,0 +1,97 @@
+<!-- Main content -->
+
+<div class="row">
+	<div class="jumbotron" style="background: url('/img/background/Immunizations-img.png'); background-size: 957px 320px; background-repeat: no-repeat; color: white; background-position: 50%, 50%;">
+		<div class="container">
+			<div class="col-xs-offset-7 col-xs-4" style="margin-top: -20px;">
+				<h2><bold style="font-weight:900;">Immunizations</bold></h2>
+				<br/><br/><br/><br/><br/><br/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+
+    <!--this is the code for the table listing the medication information-->
+	
+	<div class="col-xs-8">
+		<div class="row">
+			<div class="col-md-12 column">
+				<div class="box box-info box-solid">
+					<div class="box-header with-border">
+						<h3 class="box-title">Immunization History</h3>
+						<div class="box-tools pull-right">
+							<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+						</div><!-- /.box-tools -->
+					</div><!-- /.box-header -->
+					<div class="box-body">
+						<div class="table-responsive">  
+<!--<p style="color: red;"><%= @new_immunication.errors.full_messages.to_sentence if @new_immunication%></p>-->
+  <table class="table">
+    <thead>
+      <tr>
+        
+        
+        <th>Administrator Name</th>
+        <th>Administered Date </th>
+        <th>Remedication Due Date</th>
+        <th>Notes</th>
+        <th>Views</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      	   <% @medications.each do |i|%>
+
+
+              <td><%=i.administrator%></td>
+              <td><%=i.date_administered%></td>
+              <td><<%=i.remedication_due_date%>/td>
+              <td><%=i.notes%></td>
+
+              <td><%= link_to "View Details", medication_path(i)%></td> 
+           <%end%>
+    </tbody>
+  </table>
+
+  </div>
+						<div class="row">
+							<div class="col-xs-12">
+								<%= link_to("Add A New Immunication Record", new_medication_path, class: "btn btn-block btn-info ") %>
+							</div>
+							
+						</div>
+					</div><!-- /.box-body -->
+				</div><!-- /.box -->
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+                                                                                        
+  
+  
+   <!--this is the code for the information vedio and link
+	
+	<div class="col-xs-4">
+		<div class="box box-info box-solid">
+			<div class="box-header">
+				<h3 class="box-title"><bold>WHO: Routine Immunizations</bold></h3>
+			</div>
+			<div class="box-body">
+				<p>Immunizations Save Lives:</p>
+                
+                <div class="embed-responsive embed-responsive-16by9">
+             <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>
+            </div>
+            
+                
+
+
+
+				<p><strong>For more information about the medications you should have, click</strong> <a href="http://108.28.88.214/GetSiteImage.aspx?FileType=Immunization">here</a></p><br />
+			</div>
+		</div>
+	</div>-->
+</div>
