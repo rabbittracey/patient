@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601211650) do
+ActiveRecord::Schema.define(version: 20160602145938) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "patient_id"
+    t.integer  "provider_id"
+  end
 
   create_table "basic_informations", force: :cascade do |t|
     t.string   "firstname"
@@ -79,7 +86,18 @@ ActiveRecord::Schema.define(version: 20160601211650) do
     t.string   "patient_state"
     t.string   "patient_zipcode"
     t.string   "patient_image_file_path"
+    t.integer  "user_id"
   end
+
+  add_index "patients", ["user_id"], name: "index_patients_on_user_id"
+
+  create_table "providers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "providers", ["user_id"], name: "index_providers_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
