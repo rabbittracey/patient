@@ -22,12 +22,12 @@
       </tr>
     </thead>
     <tbody>
-            <%@immunizations.each do |i|%>
+            <% @immunizations.each do |i|%>
       <tr>
 
               <td><%=i.administrator%></td>
               <td><%=i.date_administered%></td>
-              <td><<%=i.reimmunization_due_date%>/td>
+              <td><%=i.reimmunization_due_date%></td>
               <td><%=i.notes%></td>
 
               <td><%= link_to "View Details", immunization_path(i)%></td> 
