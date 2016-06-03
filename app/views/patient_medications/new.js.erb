@@ -1,0 +1,16 @@
+// var t = <%#= escape_javascript render('test')%>;
+$("#modal-content").html('<%= escape_javascript render("new", object: @patientmedication)%>');
+$(".bs-example-modal-lg").show();
+
+$('.bs-example-modal-lg').on('shown.bs.modal', function () {
+var availableTags = gon.hcpc_code_array
+$( ".findHCPCCode" ).autocomplete({
+      source: availableTags,
+      delay: 1,
+      minLength: 2
+    });
+$( ".findHCPCCode" ).autocomplete( "option", "appendTo", "#modal-content" );
+$(".Fenhandatepicker").datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    });
+});

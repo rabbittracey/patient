@@ -1,0 +1,79 @@
+<div class="container-fluid">
+
+
+  <div class="row">
+
+
+
+
+<%= form_for @patientmedication do |f| %>
+
+
+
+
+      <!-- first row-->
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <div class="form-inline">
+                        <div class="form-group">
+                        <%= f.label :Medication_name %>
+                        <%= f.text_field :drug_name, class: "panel panel-default" %>
+                      </div>
+                        <div class="form-group">
+                          <%= f.label :Date_Started %>
+                          <%= f.text_field :date_started,class: "panel panel-default" %>
+
+                        </div>
+                        <div class="form-group">
+              <%= f.label :Dosage %>
+              <%= f.text_field :dosage,class: "panel panel-default" %>
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="col-xs-12 col-sm-8 col-md-6">
+          <div class="form-inline">
+          <div class="form-group">
+            <%= f.label :Frequency %>
+            <%= f.text_field :frequency ,class: "panel panel-default"%>
+
+          </div>
+            <div class="form-group">
+              <%= f.label :Prescribed_By %>
+              <%= f.text_field :prescribed_by,class: "panel panel-default" %>
+
+            </div>
+            <div class="form-group">
+              <%= f.label :Reminder %>
+              <%= f.text_field :reminder,class: "panel panel-default" %>
+
+            </div>
+
+        </div>
+        </div>
+      </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-1">
+        <%= f.submit "Sumbit", class: "btn btn-block btn-info "%>
+
+      </div>
+        <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-1">
+        <%= link_to("Cancel", patient_medications_path, class: "btn btn-block btn-warning ") %>
+
+      </div>
+
+
+
+    <%end %>
+
+  </div>
+
+
+
+  <div class="container">
+

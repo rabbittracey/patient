@@ -1,0 +1,52 @@
+<!-- Main content -->
+<div class="container">
+
+<div class="row">
+
+    <!--this is the code for the table listing the immunization information-->
+	
+ <div class="col-sm-12 col-md-8 col-md-offset-2">
+			<h2>current medications</h2>
+           <br/></br>
+
+
+
+              <table class="table table-striped table-hover table-responsive">
+    <thead >
+      <tr class="success">
+        <th>Medication Name</th>
+        <th>Date Started</th>
+        <th>Dosage</th>
+        <th>Frequency</th>
+        <th>Prescribed By</th>
+        <th>Reminder</th>
+        <th>Views</th>
+      </tr>
+    </thead>
+    <tbody>
+            <% @patientmedications.each do |i|%>
+      <tr>
+
+              <td><%=i.drug_name%></td>
+              <td><%=i.date_started%></td>
+              <td><<%=i.dosage%>/td>
+              <td><%=i.frequency%></td>
+              <td><%=i.prescribed_by%></td>
+              <td><%=i.reminder%></td>              
+              <td><%= link_to "View Details", patient_medication_path(i)%></td> 
+
+       </tr>
+          <%end%>
+    </tbody>
+  </table>
+
+						<div class="row">
+							<div class="col-xs-12">
+								<%= link_to("Add A New Medication Record", new_patient_medication_path, class: "btn btn-block btn-info ") %>
+							</div>
+							
+						</div>
+
+</div>
+</div>
+</div>
