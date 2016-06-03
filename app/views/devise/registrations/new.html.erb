@@ -15,13 +15,15 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= text_area_tag(:fname, "First Name",class: "form-control input-lg")%>
-              <input type="string" class="form-control input-lg" id="fname" placeholder="First Name" tabindex="1">
+
+              <%= text_area_tag(:fname, '' ,class: "form-control input-lg",placeholder: "First Name",size: "5x1.8")%>
+
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="lname" placeholder="Last Name" tabindex="2">
+              <%= text_area_tag(:lname, '' ,class: "form-control input-lg",placeholder: "Last Name",size: "5x1.8" )%>
+
             </div>
           </div>
         </div>
@@ -29,45 +31,37 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <select type="string" class="form-control input-lg" id="prefix" tabindex="3">
-              <option value=""><%= :Prefix %></option>
-              <option value="<%= :Ms %>"><%= :Ms %></option>
-              <option value="<%= :Miss %>"><%= :Miss %></option>
-              <option value="<%= :Mrs %>"><%= :Mrs %></option>
-              <option value="<%= :Mr %>"><%= :Mr %></option>
-              <option value="<%= :Dr %>"><%= :Dr %></option>
-              <option value="<%= :Prof %>"><%= :Prof %></option>
-            </select>
+              <%= select_tag(:prefix, options_for_select([['Prefix',0],['Ms', 1], ['Miss.', 2], ['Mrs', 3],['Mr', 4],['Dr', 5],
+                                                           ['Prof', 6]]),class: "form-control input-lg",placeholder: "Prefix") %>
+
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <select type="string" class="form-control input-lg" id="postfix"  tabindex="4">
-              <option value=""><%= :Suffix %></option>
-              <option value="Jr.">Jr.</option>
-              <option value="Sr.">Sr.</option>
-              <option value="M.D.">M.D.</option>
-              <option value="Ph.D.">Ph.D.</option>
-              <option value="II">II</option>
-              <option value="III">III</option>
-              <option value="IV">IV</option>
-              </select>
+              <%= select_tag(:postfix, options_for_select([['Postfix',0],['Jr.', 1], ['Sr.', 2], ['M.D.', 2],['Ph.D.', 2],['II', 2],
+                                                           ['III', 2],['IV', 2]]),class: "form-control input-lg",placeholder: "Surffix") %>
+
+
+
+
+
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
+
             <div class="form-group">
-              <select type="string" class="form-control input-lg" id="gender" tabindex="5">
-                <option value=""><%= :Male %></option>
-              <option value="<%= :Female %>"><%= :Female %></option>
-              </select>
+              <%= select_tag(:gender, options_for_select([['Male', 2],['Female', 3]]),class: "form-control input-lg",placeholder: "Gender") %>
+
+
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="date" class="form-control input-lg" id="dob" placeholder="Birth Day" tabindex="6">
+              <%= date_field(:dob, '' ,class: "form-control input-lg",placeholder: "Birth Day")%>
+
             </div>
           </div>
         </div>
@@ -75,7 +69,8 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="home_address1" placeholder="Address" tabindex="7">
+              <%= text_area_tag(:home_address1, '' ,class: "form-control input-lg",placeholder: "Address 1" )%>
+
             </div>
           </div>
         </div>
@@ -83,7 +78,8 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="home_address2" placeholder="Address2" tabindex="8">
+              <%= text_area_tag(:home_address2, '' ,class: "form-control input-lg",placeholder: "Address 2" ,size: "5x1.8")%>
+
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
@@ -103,7 +99,8 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="home_phone_number" placeholder="Mobile Phone Number" tabindex="10">
+              <%= number_field(:home_phone_number, '' ,class: "form-control input-lg",placeholder: "Home Phone Number")%>
+
             </div>
           </div>
         </div>
@@ -111,7 +108,9 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="email" placeholder="Email Address" tabindex="11">
+
+              <%= email_field(:email, '' ,class: "form-control input-lg",placeholder: "Email Address")%>
+
             </div>
           </div>
         </div>
@@ -119,7 +118,8 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="password" placeholder="Password" tabindex="12">
+              <%= password_field_tag(:encrypted_password, '' ,class: "form-control input-lg",placeholder: "Password")%>
+
             </div>
           </div>
         </div>
@@ -127,13 +127,13 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <input type="string" class="form-control input-lg" id="password" placeholder="Comfirm Password" tabindex="13">
+              <%= password_field_tag(:encrypted_password, '' ,class: "form-control input-lg",placeholder: "Confirm Password")%>
             </div>
           </div>
         </div>
-
+        <%= render "devise/shared/links" %>
         <div class="container">
-          <%= render "devise/shared/links" %>
+
         </div>
 
       </form>

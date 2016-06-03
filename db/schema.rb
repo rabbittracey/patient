@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602204816) do
+ActiveRecord::Schema.define(version: 20160602210709) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160602204816) do
     t.string   "side_effects",  limit: 415
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "patient_id"
   end
 
   create_table "patient_immunizations", force: :cascade do |t|

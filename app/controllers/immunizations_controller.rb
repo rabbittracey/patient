@@ -31,7 +31,7 @@ class ImmunizationsController < ApplicationController
 
     def update
     	@immunization=Immunization.find(params[:id])
-    	if @immunizations.update(immunization_params)
+    	if @immunization.update(immunization_params)
     		 redirect_to @immunization
         else 
         	render 'edit'
