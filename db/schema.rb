@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160602215150) do
+=======
+ActiveRecord::Schema.define(version: 20160602210709) do
+>>>>>>> 0168148c2f942db2a73d249c9fd8306e0ebe1db2
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -69,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160602215150) do
     t.string   "side_effects",  limit: 415
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.integer  "patient_id"
   end
 
   create_table "patient_immunizations", force: :cascade do |t|
