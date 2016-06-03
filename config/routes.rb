@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :immunizations
   resources :medications
   resources :patient_medications
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routedes".
 
