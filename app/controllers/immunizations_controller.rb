@@ -9,7 +9,7 @@ class ImmunizationsController < ApplicationController
 	def index
 		@immunizations=Immunization.all
 
-    end
+  end
 
     def create
     	@immunization=Immunization.new(immunization_params)
