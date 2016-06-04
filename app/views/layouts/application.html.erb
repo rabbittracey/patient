@@ -36,22 +36,65 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="hidden">
-          <a href="#page-top"></a>
-        </li>
-        <li class="page-scroll">
-          <a href="#portfolio">Portfolio</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#about">Language</a>
-        </li>
-        <li class="page-scroll">
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
+
+
+
+
+
+    <% if user_signed_in? %>
+
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#portfolio">Home</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#about">Language</a>
+            </li>
+            <li class="page-scroll">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
+
+
+    <% else %>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
+            </li>
+            <li class="page-scroll">
+              <a href="#portfolio">About</a>
+            </li>
+            <li class="page-scroll">
+              <a href="#about">Language</a>
+            </li>
+            <li class="page-scroll">
+              <%= link_to "Sign in", new_user_session_path %>
+            </li>
+            <li class="page-scroll">
+              <%= link_to "Sign up", new_user_registration_path %>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+    <% end %>
+
+
+
+
+
     <!-- /.navbar-collapse -->
   </div>
   <!-- /.container-fluid -->

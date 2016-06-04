@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
       <form role="form">
-        <h2>Please Sign Up</h2>
+       
 
         <h3 class="text-center text-info"> Basic Information</h3>
         <hr class="colorgraph">
@@ -16,13 +16,16 @@
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
 
-              <%= text_area_tag(:fname, '' ,class: "form-control input-lg",placeholder: "First Name",size: "5x1.8")%>
+
+              <%= f.text_field :fname, autofocus: true ,class: "form-control input-lg",placeholder: "First Name",size: "5x1.8"%>
+
 
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= text_area_tag(:lname, '' ,class: "form-control input-lg",placeholder: "Last Name",size: "5x1.8" )%>
+              <%= f.text_field :lname, autofocus: true ,class: "form-control input-lg",placeholder: "Last Name",size: "5x1.8"%>
+
 
             </div>
           </div>
@@ -31,15 +34,15 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= select_tag(:prefix, options_for_select([['Prefix',0],['Ms', 1], ['Miss.', 2], ['Mrs', 3],['Mr', 4],['Dr', 5],
-                                                           ['Prof', 6]]),class: "form-control input-lg",placeholder: "Prefix") %>
+              <%= f.select(:prefix, options_for_select([['Prefix',0],['Ms', 1], ['Miss.', 2], ['Mrs', 3],['Mr', 4],['Dr', 5],
+                                                           ['Prof', 6]]),{},class: "form-control input-lg",placeholder: "Prefix") %>
 
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= select_tag(:postfix, options_for_select([['Postfix',0],['Jr.', 1], ['Sr.', 2], ['M.D.', 2],['Ph.D.', 2],['II', 2],
-                                                           ['III', 2],['IV', 2]]),class: "form-control input-lg",placeholder: "Surffix") %>
+              <%= f.select(:postfix, options_for_select([['Postfix',0],['Jr.', 1], ['Sr.', 2], ['M.D.', 2],['Ph.D.', 2],['II', 2],
+                                                           ['III', 2],['IV', 2]]),{},class: "form-control input-lg",placeholder: "Surffix") %>
 
 
 
@@ -53,53 +56,15 @@
           <div class="col-xs-12 col-sm-6 col-md-6">
 
             <div class="form-group">
-              <%= select_tag(:gender, options_for_select([['Male', 2],['Female', 3]]),class: "form-control input-lg",placeholder: "Gender") %>
+              <%= f.select :gender, options_for_select([['Male', 2],['Female', 3]]),{},class: "form-control input-lg",placeholder: "Gender" %>
 
 
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= date_field(:dob, '' ,class: "form-control input-lg",placeholder: "Birth Day")%>
+              <%= f.date_field :dob, autofocus: true,class: "form-control input-lg",placeholder: "Birth Day" %>
 
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-              <%= text_area_tag(:home_address1, '' ,class: "form-control input-lg",placeholder: "Address 1" )%>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="form-group">
-              <%= text_area_tag(:home_address2, '' ,class: "form-control input-lg",placeholder: "Address 2" ,size: "5x1.8")%>
-
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="form-group">
-              <select type="string" class="form-control input-lg" id="country" tabindex="9">
-                <option value=""><%= :Country %></option>
-                <option value="<%= :Afghanistan %>"><%= :Afghanistan %></option>
-                <option value="<%= :Belgium %>"><%= :Belgium %></option>
-                <option value="<%= :China %>"><%= :China %></option>
-                <option value="United States">United States</option>
-                
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-              <%= number_field(:home_phone_number, '' ,class: "form-control input-lg",placeholder: "Home Phone Number")%>
 
             </div>
           </div>
@@ -109,7 +74,26 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
 
-              <%= email_field(:email, '' ,class: "form-control input-lg",placeholder: "Email Address")%>
+              <%= f.text_field :home_address1, autofocus: true,class: "form-control input-lg",placeholder: "Address 1" %>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+
+              <%= f.text_field :home_address2, autofocus: true,class: "form-control input-lg",placeholder: "Address 2" %>
+
+
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="form-group">
+
+              <%= f.select(:country, options_for_select([['Afghanistan',0],['Belgium', 1], ['Belgium', 2], ['China', 2]]),{},class: "form-control input-lg",placeholder: "Surffix") %>
+
 
             </div>
           </div>
@@ -118,7 +102,9 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <%= password_field_tag(:encrypted_password, '' ,class: "form-control input-lg",placeholder: "Password")%>
+
+              <%= f.number_field :home_phone_number, autofocus: true,class: "form-control input-lg",placeholder: "Home Phone Number" %>
+
 
             </div>
           </div>
@@ -127,20 +113,73 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <%= password_field_tag(:encrypted_password, '' ,class: "form-control input-lg",placeholder: "Confirm Password")%>
+
+
+              <%= f.email_field :email, autofocus: true,class: "form-control input-lg",placeholder: "Email Address" %>
+
+
+
             </div>
           </div>
         </div>
-        <%= render "devise/shared/links" %>
-        <div class="container">
 
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+
+
+              <div class="field">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :encrypted_password, autocomplete: "off" ,class: "form-control input-lg",placeholder: "Password"%>
+              </div>
+
+
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+              <div class="field">
+                <%= f.label :password %>
+                <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <% end %><br />
+                <%= f.password_field :encrypted_password, autocomplete: "off" ,class: "form-control input-lg",placeholder: "Password"%>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+              <div class="field">
+                <div class="actions">
+                  <%= f.submit "Sign up",class: "form-control input-lg" %>
+                </div>
+                <%= render "devise/shared/links" %>
+                <div class="container">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
       </form>
     </div>
   </div>
 
 <% end %>
+
 
 
 
