@@ -15,7 +15,7 @@
 
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "piwik" %>
+  <%#= javascript_include_tag "piwik" %>
 
 </head>
 
@@ -38,65 +38,26 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
 
 
-
-
-
     <% if user_signed_in? %>
 
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="hidden">
-              <a href="#page-top"></a>
-            </li>
-            <li class="page-scroll">
-              <a href="#portfolio">Home</a>
-            </li>
-            <li class="page-scroll">
-              <a href="#about">Language</a>
-            </li>
-            <li class="page-scroll">
-              <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-            </li>
-          </ul>
-        </div>
+        <%=  link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete %>
 
 
     <% else %>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="hidden">
-              <a href="#page-top"></a>
-            </li>
-            <li class="page-scroll">
-              <a href="#portfolio">About</a>
-            </li>
-            <li class="page-scroll">
-              <a href="#about">Language</a>
-            </li>
-            <% if user_signed_in? %>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
-
-            <% else %>
-
-                <%= link_to "Sign in", new_user_session_path %>
-                <%= link_to "Sign up", new_user_registration_path %>
-
-
-                <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p>
-            <% end %>
-          </ul>
-        </div>
-
-
-
+        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Sign up", new_user_registration_path %>
 
 
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
     <% end %>
+    <%= link_to "Home", page_home_path %>
+    <%= link_to "About", page_about_path %>
+    <%= link_to "Contact", page_contact_path %>
+
+
+
 
 
 

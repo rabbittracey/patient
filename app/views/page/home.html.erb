@@ -1,0 +1,89 @@
+
+
+
+<div class="container">
+  <div class="welcome_background">
+    <h2>Welcome! </h2>
+
+
+    <div class="row">
+
+      <div class="col-sm-6 col-md-6 col-lg-6">
+
+
+        <h4>Sign in as a patient</h4>
+        <img class="img-circle" src="images/2.png" alt="Patient" width="280" height="280" >
+
+
+
+
+
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3 ">
+            <% if user_signed_in? %>
+                <div class="col-xs-6 col-xs-offset-3 ">
+                <%=  link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete %>
+                </div>
+
+            <% else %>
+                <div class="col-xs-6  ">
+                <%= link_to "Sign in", new_user_session_path %>
+                </div>
+                <div class="col-xs-6  ">
+                <%= link_to "Sign up", new_user_registration_path %>
+                </div>
+
+
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+            <% end %>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <div class="col-sm-6 col-md-6 col-lg-6">
+
+
+        <h4>Sign in as a provider</h4>
+        <img class="img-circle" src="images/1.png" alt="Provider" width="280" height="280" >
+
+
+
+
+
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3 ">
+            <% if user_signed_in? %>
+              <div class="col-xs-6 col-xs-offset-3 ">
+                <%=  link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete %>
+              </div>
+
+            <% else %>
+              <div class="col-xs-6  ">
+                <%= link_to "Sign in", new_user_session_path %>
+              </div>
+              <div class="col-xs-6  ">
+                <%= link_to "Sign up", new_user_registration_path %>
+              </div>
+
+                <p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>
+            <% end %>
+           </div>
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+</div>

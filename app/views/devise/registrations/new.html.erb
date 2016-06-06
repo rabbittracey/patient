@@ -1,4 +1,8 @@
 
+<h2>Sign up</h2>
+
+
+
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -123,6 +127,20 @@
           </div>
         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -133,7 +151,7 @@
                 <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
-                <%= f.password_field :encrypted_password, autocomplete: "off" ,class: "form-control input-lg",placeholder: "Password"%>
+                <%= f.password_field :password, autocomplete: "off" ,class: "form-control input-lg",placeholder: "Password"%>
               </div>
 
 
@@ -141,6 +159,14 @@
           </div>
         </div>
 
+
+
+
+
+
+
+
+
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -149,7 +175,7 @@
                 <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %><br />
-                <%= f.password_field :encrypted_password, autocomplete: "off" ,class: "form-control input-lg",placeholder: "Password"%>
+                <%= f.password_field :password_confirmation, autocomplete: "off" ,class: "form-control input-lg",placeholder: "Password"%>
               </div>
             </div>
           </div>

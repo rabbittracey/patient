@@ -1,8 +1,10 @@
+
+
 <div class="row">
 <%- if controller_name != 'sessions' %>
 
       <div class="col-xs-6 col-md-6 ">
-  <%= link_to("Log in", patients_path, class: "btn btn-block btn-warning") %><br />
+  <%= link_to("Log in", new_session_path(resource_name), class: "btn btn-block btn-warning") %><br />
       </div>
 
 

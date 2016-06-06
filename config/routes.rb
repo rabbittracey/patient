@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
 
+  get 'page/home'
+
+  get 'page/contact'
+
+  get 'page/about'
+
   get 'user/new'
 
   get 'user/edit'
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   get 'welcome/index'
 
-  
-  root  "welcome#index"
 
+  root 'page#home'
+  get 'page/about'
+  get 'page/home'
+  get 'page/contact'
 
   resources :patients
   resources :providers
