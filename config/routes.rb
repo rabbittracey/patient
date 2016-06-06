@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'page/home'
   get 'page/contact'
 
+
+
+
   resources :patients
   resources :providers
   resources :immunizations

@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(user)
    #this can be defined based on the user type
     if user.user_type=="1"
-       patients_path
+       patient_path(user)
     else
-      providers_path
+      providers_path(user)
     end
   end
 
