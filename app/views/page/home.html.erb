@@ -27,10 +27,10 @@
 
             <% else %>
                 <div class="col-xs-6  ">
-                <%= link_to "Sign in", new_user_session_path %>
+                <%= link_to "Sign in", new_user_session_path(@user) %>
                 </div>
                 <div class="col-xs-6  ">
-                <%= link_to "Sign up", new_user_registration_path %>
+                <%= link_to "Sign up", new_user_registration_path(@user) %>
                 </div>
 
 
@@ -65,10 +65,10 @@
 
             <% else %>
               <div class="col-xs-6  ">
-                <%= link_to "Sign in", new_user_session_path %>
+                <%= link_to "Sign in", new_user_session_path(@user) %>
               </div>
               <div class="col-xs-6  ">
-                <%= link_to "Sign up", new_user_registration_path %>
+                <%= link_to "Sign up", new_user_registration_path(@user[:user_type => "1"]) %>
               </div>
 
                 <p class="notice"><%= notice %></p>

@@ -5,8 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-PatientImmunization.create!(patient_id: '1', notes: 'pickles, eggs, red onion')
-PatientImmunization.create!(patient_id: '12', notes: 'pickles, eggs, red onion')
-PatientImmunization.create!(patient_id: '13', notes: 'pickles, eggs, red onion')
-PatientImmunization.create!(patient_id: '124', notes: 'pickles, eggs, red onion')
-PatientImmunization.create!(patient_id: '134', notes: 'pickles, eggs, red onion')

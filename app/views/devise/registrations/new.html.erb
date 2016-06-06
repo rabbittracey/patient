@@ -16,6 +16,25 @@
 
         <h3 class="text-center text-info"> Basic Information</h3>
         <hr class="colorgraph">
+
+
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="form-group">
+              <%= f.select :user_type, options_for_select([['Patient', 1],['Provider', 2]]),{},class: "form-control input-lg",placeholder: "User Type" %>
+
+
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
@@ -38,15 +57,15 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= f.select(:prefix, options_for_select([['Prefix',0],['Ms', 1], ['Miss.', 2], ['Mrs', 3],['Mr', 4],['Dr', 5],
+              <%= f.select(:prefix, options_for_select([['Ms', 1], ['Miss.', 2], ['Mrs', 3],['Mr', 4],['Dr', 5],
                                                            ['Prof', 6]]),{},class: "form-control input-lg",placeholder: "Prefix") %>
 
             </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
-              <%= f.select(:postfix, options_for_select([['Postfix',0],['Jr.', 1], ['Sr.', 2], ['M.D.', 2],['Ph.D.', 2],['II', 2],
-                                                           ['III', 2],['IV', 2]]),{},class: "form-control input-lg",placeholder: "Surffix") %>
+              <%= f.select(:postfix, options_for_select([['Jr.', 2], ['Sr.', 3], ['M.D.', 4],['Ph.D.', 5],['II', 6],
+                                                           ['III', 7],['IV', 8]]),{},class: "form-control input-lg",placeholder: "Surffix") %>
 
 
 
@@ -60,7 +79,7 @@
           <div class="col-xs-12 col-sm-6 col-md-6">
 
             <div class="form-group">
-              <%= f.select :gender, options_for_select([['Male', 2],['Female', 3]]),{},class: "form-control input-lg",placeholder: "Gender" %>
+              <%= f.select :gender, options_for_select([['Male', 1],['Female', 2]]),{},class: "form-control input-lg",placeholder: "Gender" %>
 
 
             </div>
@@ -96,7 +115,7 @@
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">
 
-              <%= f.select(:country, options_for_select([['Afghanistan',0],['Belgium', 1], ['Belgium', 2], ['China', 2]]),{},class: "form-control input-lg",placeholder: "Surffix") %>
+              <%= f.select(:country, options_for_select([['Afghanistan',1],['Belgium', 2], ['Belgium', 3], ['China', 4]]),{},class: "form-control input-lg",placeholder: "Surffix") %>
 
 
             </div>
@@ -107,7 +126,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
 
-              <%= f.number_field :home_phone_number, autofocus: true,class: "form-control input-lg",placeholder: "Home Phone Number" %>
+              <%= f.text_field :home_phone_number, autofocus: true,class: "form-control input-lg",placeholder: "Home Phone Number" %>
 
 
             </div>
