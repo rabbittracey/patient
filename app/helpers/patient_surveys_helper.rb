@@ -1,0 +1,2 @@
+module PatientSurveysHelper
+end

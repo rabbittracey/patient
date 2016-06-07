@@ -25,8 +25,9 @@ class PatientsController < ApplicationController
 
   def show
    # @patient=Patient.find(params[:id])
+    @user=current_user
     @patient=Patient.find_by_user_id(params[:id])
-    @user = @patient.user
+
   end
   def edit
     @patient=Patient.find_by_user_id(params[:id])

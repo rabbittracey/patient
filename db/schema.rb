@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606213622) do
+ActiveRecord::Schema.define(version: 20160607130745) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20160606213622) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "patient_immunizations", ["patient_id", "created_at"], name: "index_patient_immunizations_on_patient_id_and_created_at"
 
   create_table "patient_medications", force: :cascade do |t|
     t.string   "drug_name",     limit: 200

@@ -1,0 +1,537 @@
+
+
+<%=form_tag patient_surveys_path do %>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-success collapsed-box">
+      <div class="box-header with-border">
+        <h3 class="box-title bg-info">Diagnosed Conditions</h3>
+        <div class="box-tools pull-right">
+          <a type="button" class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <% dc=["Anemia", "Poor Blood Clotting", "Diabetes type 1", "Diabetes type 2", "HIV/AIDS", "Thyroid,Overactive", "Thyroid, Underactive", "Goiter", "Alcoholism", "Attention Deficit Disorder (ADD)", "Depression", "Serious Emotional Problem", "Nervous Breakdown", "Drug Abuse", "Migraine Headaches", "Polio", "Epilepsy or Convulsions", "Stroke", "Glaucoma", "Cataracts", "Blindness Either Eye", "Ear lnfections", "", "Hearing Problem", "Hay Fever", "Hardening of Arteries", "Heart Murmur", "Abnormal Electrocardiogram", "High Blood Pressure", "Enlarged Heart", "Angina", "Heart Attack", "Rheumatic Fever", "Blood Clot", "Phlebitis", "Varicose Veins", "Asthma", "Chronic Bronchitis", "Emphysema", "Tuberculosis", "Diverticulosis/Diverticultis", "Pancreatitis", "Gall Stones", "Hepatitis", "Cirrhosis of Liver", "Stomach or Duodenal Ulcer", "Reflux Esophagitis", "", "Colon or Bowel Trouble", "Hernia", "Hemorrhoids or Piles", "Dysentry or Serious Diarrhea", "Kidney or Bladder Infection", "Kidney Stones", "Cystitis", "Syphilis", "Gonorrhea", "Genital Herpes", "Genital Warts", "Slipped Disc", "Gout", "Osteoporosis", "Arthritis", "Eczema", "Psoriasis", "Skin Disease", "Cancer", "", "Men", "Enlarged prostate", "Benign prostatic"].reject{|x| x.chomp.strip.size==0 } %>
+        <div class="row">
+          
+          <% dc.each do |d| %>
+            <div class="col-xs-4">
+              <div class="form-group">
+                <label>
+                  <!-- <input type="checkbox" class="flat-red" name="survey[conditions][<%= d %>]" checked="off"/> -->
+                  <%= check_box_tag 'survey[conditons][]',dc.index(d),false, class: "flat-red" %>
+                  <%= d %>
+                </label>
+              </div>
+            </div>
+          <% end %>
+          
+          <!-- <div class="col-lg-12 col-xs-12">
+            <%#=select_tag "diagnosed_conditions[]", options_for_select(dc.sort, '1990'), multiple: true, class: 'form-control', size: '10'%>
+          </div> -->
+        </div>  
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-success collapsed-box">
+      <div class="box-header with-border">
+        <h3 class="box-title bg-info">Surgeries, Major Injuries and Hospitalízations</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Surgeries---Major Injuries---Hospitalízations</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="rowContent in surgeryRows">
+                <td><%=text_field_tag "survey[surgery_history][]", '', class: "form-control" %></td>
+                <td>
+                  <%=select_tag "survey[surgery_year][]", options_for_select((1990...Time.now.year.to_i).to_a, '1990'), class: 'form-control'%>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-xs-12">
+          <a class="btn btn-warning" ng-click="addRowToSurgery()" >Add Row</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-success collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Family History</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Please check the appropriate box if any family member has had any of the following conditions:</p>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th bgcolor="#111111"></th>
+                <th bgcolor="#111111"><font color="white">Father's Side</font></th><th bgcolor="#111111"></th><th bgcolor="#111111"></th>
+                <th bgcolor="#111111"><font color="white">Mother's Side</font></th><th bgcolor="#111111"></th><th bgcolor="#111111"></th><th bgcolor="#111111"></th><th bgcolor="#111111"></th>
+              </tr>
+              <tr>
+                <% parent=['Granddad_Father_Side','Grandmom_Father_Side','Father_Father_Side','Granddad_Mother_Side','Grandmom_Mother_Side','Mother_Mother_Side','Brother_Mother_Side','Sister_Mother_Side']%>
+                <th></th><th>Granddad</th><th>Grandmom</th><th>Father</th><th>Granddad<th>Grandmom</th><th>Mother</th><th>Brother</th><th>Sister</th>
+              </tr>
+              <% arr=["Alcoholism", "Allergies_or_Asthma", "Breast_Cancer", "Cancer_Colon", "Ovary_Cancer", "Cancer_Prostate", "diabets_type_1", "diabets_type_2", "Heart_Attack", "High_Blood_Pressure", "High_Cholesterol", "Mental_illness", "Osteoporosis", "Sickle Cell Disease", "Stroke"] %>
+              <%#=hidden_field_tag :family_history_enum, arr.join(',')%>
+            </thead>
+            <tbody>
+              <% arr.each do |line|%>
+              <tr>
+                <td><%=line%></td>
+                <% parent.each do |p|%>
+                <td><div class="checkbox"><label><%= check_box_tag "survey[familyHistory][#{line}]",p , false, class: 'minimal-red'%></label></div></td>
+                <%end%>
+              </tr>
+              <%end%>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-warning collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Social History</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+          <div class="form-group col-xs-4">
+            <label for="occupation">Occupation:</label>
+            <input type="text" class="form-control" id="occupation" name="survey[socialHistory][occupation]" placeholder="Occupation">
+          </div>
+          <div class="form-group col-xs-4">
+            <label for="edu_last_grade_completed">Education Last grade completed:</label>
+            <input type="text" class="form-control" id="edu_last_grade_completed" name="survey[socialHistory][lastEDU]" placeholder="Education-Last grade completed">
+          </div>
+          <div class="form-group col-xs-4">
+            <label>Marital Status:</label>
+            <%=select_tag "survey[socialHistory][maritalStatus]",options_for_select(%w[Single Married Seperated Divorced Widowed]), class: 'form-control' %>
+          </div>
+            
+          <div class="form-group col-xs-4">
+          	<label>Do you smoke?</label>
+            <div >
+               	<label class="radio-inline">
+                	<input type="radio" name="survey[socialHistory][smoke]" id="smoke_yes" value="yes"><strong>Y</strong></input>
+            	</label>
+            	<label class="radio-inline">
+                	<input type="radio" name="survey[socialHistory][smoke]" id="smoke_no" value="no"><strong>N</strong></input>
+            	</label>
+            </div>
+
+            <div>
+            	<label>Packs perday:</label>
+            	<%=text_field_tag "survey[immunization][packPerDay]", '' , class: "form-control"%>
+            	<label>for:</label>
+            	<%=select_tag "survey[immunization][packPerDayYear]", options_for_select((1..10).to_a, '1') , class: 'form-control'%>
+            </div>
+
+			<div>
+            	<label>If you quit, in what year:</label>
+            	<%=select_tag "survey[immunization][smokeQuitYear]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+          	</div>
+          </div>
+
+          <div class="form-group col-xs-4">
+          	<label>Do you drink alcohol?</label>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="survey[socialHistory][drink]" id="drink_yes" value="yes"><strong>Y</strong></input>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="survey[socialHistory][drink]" id="drink_no" value="no"><strong>N</strong></input>
+              </label>
+            </div>
+
+          <div>
+            <label>Drinks per Week:</label>
+            <%=select_tag "survey[socialHistory][drinkPerWeek]" , options_for_select((0..10).to_a, '1'), class: 'form-control' %>
+          </div>
+
+          </div> 
+
+          <div class="form-group col-xs-4">
+          	<label>Do you drink Caffeine?</label>
+            <div >
+              <label class="radio-inline">
+                	<input type="radio" name="survey[immunization][drinkCaffeinResult]" id="drink_caffein_yes" value="yes"><strong>Y</strong></input>
+              </label>
+            
+            	<label class="radio-inline">
+                	<input type="radio" name="survey[immunization][drinkCaffeinResult]" id="drink_caffein_no" value="no"><strong>N</strong></input>
+              </label>
+            </div>
+
+			<div >
+            	<label>How many cups/drinks of coffee, tea perday:</label>
+            	<%=select_tag "survey[immunization][cupsOfCoffee]", options_for_select((1..10).to_a,'1'), class: 'form-control'%>
+          	</div> 
+
+
+          </div>
+
+			<div class="form-group col-xs-4">
+				<label>Do you wear your seatbelt?</label>
+            	<div>
+              	<label class="radio-inline">
+                	<input type="radio" name="survey[immunization][wearSeatbeltResult]" id="wear_seatbelt_yes" value="yes"><strong>Y</strong></input>
+              	</label>
+            	<label class="radio-inline">
+                	<input type="radio" name="survey[immunization][wearSeatbeltResult]" id="wear_seatbelt_no" value="no"><strong>N</strong></input>
+              	</label>
+            	</div>
+          	</div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-warning collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Immunization and TB Skin Test</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+        <div class="row">
+          <div class="form-group col-xs-4">
+            <label>Tetanus Shot (Last):</label>
+            <%=select_tag "survey[immunization][tetanusShotTime]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control' %>
+          </div>
+          <div class="form-group col-xs-4">
+            <label>TB Skin Test (Latest):</label>
+            <%=select_tag "survey[immunization][TBSkinTestTime]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+          </div>
+          <div class="form-group col-xs-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[immunization][TBSkinTestResult]" id="was_it_pos" value="pos"><strong>TB TEST Positive</strong></input>
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[immunization][TBSkinTestResult]" id="was_it_neg" value="neg"><strong>TB TEST Negative</strong></input>
+              </label>
+            </div>
+          </div>
+          </div>
+        <div class="row">
+          <div class="form-group col-xs-4">
+            <label>Flu Shot (Last):</label>
+            <%=select_tag "survey[immunization][fluShotTime]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%><br/>
+          </div>
+          <div class="form-group col-xs-4">
+            <label>Pneumonia Vaccine:</label>
+            <%=select_tag "survey[immunization][pneumoniaVaccineTime]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+          </div>
+          </div>
+        <div class="row">
+          <div class="form-group col-xs-4">
+          	<label>MMR Booster</label>
+          	<div>
+            	<label class="radio-inline"> 
+                	<input type="radio" name="survey[immunization][MMRReuslt]" id="MMR_yes" value="yes"><strong>Y</strong></input>
+              	</label>
+              	<label class="radio-inline">
+                	<input type="radio" name="survey[immunization][MMRReuslt]" id="MMR_no" value="no"><strong>N</strong></input>
+              	</label>
+            </div>
+          </div>
+
+          	<div class="form-group col-xs-4">
+				<label>Meningococcal Vaccine</label>
+            	<div>
+              	<label class="radio-inline">
+                	<input type="radio" name="survey[immunization][meningococcalVaccResult]" id="MV_yes" value="yes"><strong>Y</strong></input>
+              	</label>
+              	<label class="radio-inline">
+                	<input type="radio" name="survey[immunization][meningococcalVaccResult]" id="MV_no" value="no"><strong>N</strong></input>
+              	</label>
+            	</div>
+          	</div>
+
+          	<div class="form-group col-xs-4">
+          	<label>Hepatitis B Vaccine</label>
+            	<div>
+              		<label class="radio-inline">
+                		<input type="radio" name="survey[immunization][HBVResult]" id="HBV_yes" value="yes"><strong>Y</strong></input>
+              		</label>
+              		<label class="radio-inline">
+                		<input type="radio" name="survey[immunization][HBVResult]" id="HBV_no" value="no"><strong>N</strong></input>
+              		</label>
+            	</div>
+          	</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-warning collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Allergies</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Medication</th>
+                <th>Reaction-Rash,itching,hives,difficulty breathing, anaphylaxis</th>
+              </tr>
+            </thead>
+            <tbody ng-repeat="row in AllergiesRows">
+              <tr>
+                <td><%=text_field_tag 'survey[allergies][medication][]', '', class: "form-control" %></td>
+                <td><%=text_field_tag 'survey[allergies][reaction][]', '', class: "form-control" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-xs-12">
+            <a class="btn btn-warning" ng-click="addRowToAllergies()" >Add Row</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-info collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Medications</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+        <div class="col-xs-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Medication</th>
+                <th>Dosage</th>
+                <th>Frequency (per day)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%=text_field_tag "survey[medication][medication][]",'',class: "form-control" %></td>
+                <td><%=text_field_tag "survey[medication][dosage][]",'', class: "form-control" %></td>
+                <td><%=text_field_tag "survey[medication][frequency][]",'', class: "form-control" %></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-xs-12">
+          <a class="btn btn-warning" ng-click="addRowToSurgery()" >Add Row</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-info collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Tests</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+          <div class="form-group col-xs-3">
+            <label>Cholesterol</label>
+            <%=select_tag "survey[tests][cholesterolYear]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][cholesterolStatus]" id="cholesterol_status_normal" value="normal"><strong>Normal</strong></input>
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][cholesterolStatus]" id="cholesterol_status_abnormal" value="abnormal"><strong>Abnormal</strong></input>
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-xs-3">
+            <label>Chest X-ray</label>
+            <%=select_tag "survey[tests][chest_xRayYear]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][chest_xRayStatus]" id="x_ray_status_normal" value="normal"><strong>Normal</strong></input>
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][chest_xRayStatus]" id="x_ray_status_abnormal" value="abnormal"><strong>Abnormal</strong></input>
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-xs-3">
+            <label>EKG</label>
+            <%=select_tag "survey[tests][EKGYear]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][EKGStatus]" id="EKG_status_normal" value="normal"><strong>Normal</strong></input>
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][EKGStatus]" id="EKG_status_abnormal" value="abnormal"><strong>Abnormal</strong></input>
+              </label>
+            </div>
+          </div>
+          <div class="form-group col-xs-3">
+            <label>Stress Test</label>
+            <%=select_tag "survey[tests][stressTestYear]", options_for_select((1990...2015).to_a, '1990'), class: 'form-control'%>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][stressTestStatus]" id="stress_test_status_normal" value="normal"><strong>Normal</strong></input>
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="survey[tests][stressTestStatus]" id="stress_test_status_abnormal" value="abnormal"><strong>Abnormal</strong></input>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-info collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Current or Recent Symptoms</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+        <div class="col-xs-12">
+          <% lis=['Fever','Chills', 'Aches','Pain','General Weakness', 'Swollen Glands','Easy Bruising','Abnormal Weight Loss','Abnormal Weight Gain','Thirsty All the Time','Sluggish','Fatigued','Agitated','Nervous','Memory Loss','Dizzy Spells','Fainting Spells','Weakness in Arm','Weakness in Leg','Speech Difficulty','Difficulty with Balance','Headaches','Blurred Vision Not Corrected by Glasses','Double Vision','Visual Changes','Halos Around Lights','Pain in Your Eyes','Last Eye Exam','Ear Pain','Drainage from Ear','Deafness','Hearing Difficulty','Buzzing','Ringing in Ears','Nosebleed','Sinus Trouble','Mouth Problem','Tooth Problem','Swelling','Lumps in Neck','Stiffness in Neck'].sort! %>
+          <div class="row">      
+            <% lis.sort.each do |l|%>
+            <div class="form-group col-xs-3">
+              <div class="checkbox">
+                <label>
+                  <%= check_box_tag "survey[symptoms][currentOrRecent][]", l, false %><strong><%= l %></strong>
+                </label>
+              </div>
+            </div>
+            <%end%>      
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-12 column">
+    <div class="box box-solid box-info collapsed-box">
+      <div class="box-header">
+        <h3 class="box-title bg-info">Do You Find Your Life:</h3>
+        <div class="box-tools pull-right">
+          <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+        </div>
+      </div>
+      <div class="box-body patientProfileInfo">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label>Are you satified with you life?</label>
+            <%=check_box_tag "survey[yourlife][satified]", 'Satisfactory'%>
+          </div> 
+          <div class="form-group">
+            <label>Do You Worry About:</label>
+            <% lis=['Money','Job','Marriage','Home Life','Children' ] %>
+            <% lis.each do |e|%><%=e%>:<%=check_box_tag "survey[yourlife][yourworry][#{e}]", e%>&nbsp &nbsp&nbsp &nbsp<%end%>
+          </div>
+          <div class="form-group">
+            <label>Do you:</label>
+            <% lis=['Cry Constantly','Often Feel Depressed','Feel Anxious','Upset']%>
+            <% lis.each do |l|%><%=l%>:<%=check_box_tag "survey[yourlife][yourfeeling][#{l}]", l%><%end%>
+          </div>
+          <div class="form-group">
+            <label>Have you:</label>
+            <% lis=['Seriously Considered Suicide (planned)','Attempted Suicide','Fluttering of Heart','Abnormal Heartbeat','Chest Pain','Swollen Ankles',
+              'Leg Cramps','Shortness of Breath','Cough','Coughing Up Blood','Wheezing','Night Sweats','Poor Appetite','Indigestion or Heartburn','Difficulty Swallowing',
+              'Nausea','Vomiting','Vomiting Blood','Abdominal Pain','Cramps','Abdominal Swelling','Diarrhea','Constipation','Change in Bowel Habits','Rectal bleeding',
+              'Black_Tar_like Bowel Movements','Blood in Urine','Pain While Urinating','Burning While Urinating','Difficulty Passing Urine','Difficulty Controlling Urine','Frequent urination','Painful Joints','Swollen joints','Loss of Muscle Strength',
+              'Swelling in Muscle','Back Pain','Changing Mole','Rash','Yellow Skin','Itching' ]%>
+              <div class="row">
+                <% lis.sort.each do |l|%>
+                <div class="form-group col-xs-3">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="survey[yourlife][situation][<%= l %>]", value="<%= l %>"><strong><%= l %></strong></input>
+                    </label>
+                  </div>
+                </div>
+                <%end%>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Men</label>
+              <% lis=['Discharge from Penis','Sore on Penis','Mass in Testicles','Difficulty Having' ]%>
+              <% lis.each do |l|%><%=l%>:<%=check_box_tag "survey[yourlife][men][#{l}]", l%><%end%>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <%= link_to "Submit", patient_path(@patient),class: 'btn btn-primary' %>
+
+    </div>
+    
+  </div>
+
+<%end%>

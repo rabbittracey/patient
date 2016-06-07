@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :providers
+  resources :patient_surveys
   resources :patient_immunizations
 
   resources :patient_medications

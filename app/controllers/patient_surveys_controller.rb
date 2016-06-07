@@ -1,6 +1,4 @@
-class PatientImmunizationsController < ApplicationController
-
-
+class PatientSurveysController < ApplicationController
   def new
     @patientimmunization=PatientImmunization.new
   end
@@ -59,6 +57,4 @@ class PatientImmunizationsController < ApplicationController
   def patientimmunization_params
     params.require(:patient_immunization).permit( :administrator, :date_administered, :reimmunization_due_date, :notes, :ndc,  :cpt_code,  :cvx_codx, :hcpcs_code)
   end
-
-
 end

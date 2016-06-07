@@ -10,7 +10,17 @@ class RegistrationsController < Devise::RegistrationsController
       flash[:notice]="Welcome! Please follow the steps"
       after_sign_in_path_for(resource)
     end
+    protected
 
+    def after_sign_up_path_for(user)
+      #this can be defined based on the user type
+      if user.user_type=="1"
+        patient_surveys_path(user)
+        # patient_path(user)
+      else
+        providers_path(user)
+      end
+    end
 
     private
 
