@@ -1,16 +1,16 @@
-class PatientPatientImmunizationsController < ApplicationController
+class PatientImmunizationsController < ApplicationController
 
   def new
     @patientimmunization=PatientImmunization.new
   end
 
   def index
-    @patientimmunizations=PatientImmunization.all
+    @patientimmunizations=PatientImmunization.find_by_patient_id(params[:id])
 
   end
 
   def create
-    @patientimmunization=PatientImmunization.new(patientimmunization_params)
+    @patientimmunization=PatientImmunization.new
 
     if @patientimmunization.save
       redirect_to @patientimmunization
@@ -21,14 +21,14 @@ class PatientPatientImmunizationsController < ApplicationController
 
 
   def show
-    @patientimmunization=PatientImmunization.find(params[:id])
+    @patientimmunization=PatientImmunization.find_by_id(params[:id])
   end
   def edit
-    @patientimmunization=PatientImmunization.find(params[:id])
+    @patientimmunization=PatientImmunization.find_by_id(params[:id])
   end
 
   def update
-    @patientimmunization=PatientImmunization.find(params[:id])
+    @patientimmunization=PatientImmunization.find_by_id(params[:id])
     if @patientimmunization.update(patientimmunization_params)
       redirect_to @patientimmunization
     else
@@ -39,7 +39,7 @@ class PatientPatientImmunizationsController < ApplicationController
 
   end
   def destroy
-    @patientimmunization=PatientImmunization.find(params[:id])
+    @patientimmunization=PatientImmunization.find_by_id(params[:id])
     @patientimmunization.destroy
     redirect_to patientimmunizations_path
 
@@ -48,7 +48,7 @@ class PatientPatientImmunizationsController < ApplicationController
 
   private
   def patientimmunization_params
-    params.require(:patientimmunization).permit(:patient_id, :administrator, :date_administered, :repatientimmunization_due_date, :notes, :ndc,  :cpt_code,  :cvx_codx, :hcpcs_code)
+    params.require(:patientimmunization).permit( :administrator, :date_administered, :reimmunization_due_date, :notes, :ndc,  :cpt_code,  :cvx_codx, :hcpcs_code)
   end
 
 

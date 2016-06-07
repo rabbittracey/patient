@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   def index
     @patient=Patient.find_by_user_id(params[:id])
 
-
+    @user = @patient.user
   end
 
 

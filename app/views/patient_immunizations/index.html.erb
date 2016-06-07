@@ -3,7 +3,7 @@
 
 <div class="row">
 
-    <!--this is the code for the table listing the immunization information-->
+    <!--this is the code for the table listing the patientimmunization information-->
 	
  <div class="col-sm-12 col-md-8 col-md-offset-2">
 			<h2>Immunization History</h2>
@@ -16,21 +16,21 @@
       <tr class="success">
         <th>Administrator Name</th>
         <th>Administered Date </th>
-        <th>Reimmunization Due Date</th>
+        <th>Repatientimmunization Due Date</th>
         <th>Notes</th>
         <th>Views</th>
       </tr>
     </thead>
     <tbody>
-            <% @immunizations.each do |i|%>
+            <% @patientimmunizations.each do |i|%>
       <tr>
 
               <td><%=i.administrator%></td>
               <td><%=i.date_administered%></td>
-              <td><%=i.reimmunization_due_date%></td>
+              <td><%=i.repatientimmunization_due_date%></td>
               <td><%=i.notes%></td>
 
-              <td><%= link_to "View Details", immunization_path(i)%></td> 
+              <td><%= link_to "View Details", patientimmunization_path(i)%></td> 
 
        </tr>
           <%end%>
@@ -39,7 +39,7 @@
 
 						<div class="row">
 							<div class="col-xs-12">
-								<%= link_to("Add A New Immunication Record", new_immunization_path, class: "btn btn-block btn-info ") %>
+								<%= link_to("Add A New Immunication Record", new_patientimmunization_path, class: "btn btn-block btn-info ") %>
 							</div>
 							
 						</div>

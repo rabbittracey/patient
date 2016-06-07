@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160606165041) do
+ActiveRecord::Schema.define(version: 20160606213622) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -36,40 +36,6 @@ ActiveRecord::Schema.define(version: 20160606165041) do
     t.text     "password_confirmation"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-  end
-
-  create_table "immunizations", force: :cascade do |t|
-    t.string   "patient_id",              limit: 30
-    t.string   "administrator",           limit: 30
-    t.datetime "date_administered",       limit: 30
-    t.datetime "reimmunization_due_date", limit: 50
-    t.text     "notes",                   limit: 500
-    t.string   "ndc",                     limit: 20
-    t.string   "cpt_code",                limit: 30
-    t.string   "cvx_codx",                limit: 10
-    t.string   "hcpcs_code",              limit: 10
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "medications", force: :cascade do |t|
-    t.string   "drug_name",     limit: 200
-    t.string   "fda_status",    limit: 100
-    t.string   "ttddrugid",     limit: 100
-    t.string   "lnm",           limit: 200
-    t.string   "indication",    limit: 2000
-    t.string   "cas_number",    limit: 50
-    t.string   "formular",      limit: 2000
-    t.string   "pubchem_cid",   limit: 100
-    t.string   "pubchem_sid",   limit: 100
-    t.string   "chebi_id",      limit: 100
-    t.string   "superdrug_atc", limit: 1000
-    t.string   "superdrug_cas", limit: 100
-    t.string   "ndc",           limit: 25
-    t.string   "side_effects",  limit: 415
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.integer  "patient_id"
   end
 
   create_table "patient_immunizations", force: :cascade do |t|
