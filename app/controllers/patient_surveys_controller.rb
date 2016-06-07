@@ -1,24 +1,20 @@
 class PatientSurveysController < ApplicationController
   def new
-    @patientimmunization=PatientImmunization.new
-  end
-
-  def index
     @user=current_user
-    @patient=Patient.find_by_user_id(@user.id)
-    @patientimmunizations=@patient.patient_immunizations.all
-    #should perform the same as the above two lines
-    #@patientimmunizations=PatientImmunization.find_by_patient_id(params[:id])
-
+    @patient=Patient.new
+    @patient.user_id=@user.id
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.new
   end
+
+
 
   def create
-    @patientimmunization=PatientImmunization.new(patientimmunization_params)
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.new(patientsurvey_params)
     @user=current_user
     @patient=Patient.find_by_user_id(@user.id)
-    @patientimmunization.patient_id=@patient.id
-    if @patientimmunization.save
-      redirect_to @patientimmunization
+    @patientsurvey.patient_id=@patient.id
+    if @patientsurvey.save
+      redirect_to patient_path(@patient)
     else
       render 'new'
     end
@@ -28,16 +24,19 @@ class PatientSurveysController < ApplicationController
   def show
 
 
-    @patientimmunization=PatientImmunization.find_by_id(params[:id])
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
   end
   def edit
-    @patientimmunization=PatientImmunization.find_by_id(params[:id])
+    @user=current_user
+    @patient=Patient.find_by_user_id(@user.id)
+
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_patient_id(params[:id])
   end
 
   def update
-    @patientimmunization=PatientImmunization.find_by_id(params[:id])
-    if @patientimmunization.update(patientimmunization_params)
-      redirect_to @patientimmunization
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
+    if @patientsurvey.update(patientsurvey_params)
+      redirect_to @patientsurvey
     else
       render 'edit'
     end
@@ -46,15 +45,15 @@ class PatientSurveysController < ApplicationController
 
   end
   def destroy
-    @patientimmunization=PatientImmunization.find_by_id(params[:id])
-    @patientimmunization.destroy
-    redirect_to patient_immunizations_path
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
+    @profile_procedures_hospitolization.destroy
+    redirect_to patient_path
 
   end
 
 
   private
-  def patientimmunization_params
-    params.require(:patient_immunization).permit( :administrator, :date_administered, :reimmunization_due_date, :notes, :ndc,  :cpt_code,  :cvx_codx, :hcpcs_code)
+  def patientsurvey_params
+    params.require(:patient_profile_prodecures_hospitolizations).permit( :prodecure_name, :description, :procedure_date)
   end
 end
