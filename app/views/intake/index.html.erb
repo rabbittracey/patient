@@ -6,11 +6,11 @@
   <li> <%= link_to("Surgery and Hospitalization", new_patient_profile_procedures_hospitolization_path, class: "btn btn-block btn-warning ") %></li>
   <li> <%= link_to("Diagosed conditions", "#", class: "btn btn-block btn-warning ") %></li>
   <li> <%= link_to("Family history", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Social history", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Immunization and TB skin test", "#", class: "btn btn-block btn-warning ") %></li>
+
+
   <li> <%= link_to("Allergies", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Medications", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Tests", "#", class: "btn btn-block btn-warning ") %></li>
+
+
   <li> <%= link_to("Current or Recent Symptoms", "#", class: "btn btn-block btn-warning ") %></li>
 
 
@@ -23,39 +23,295 @@
   <li> <%= link_to("Surgery and Hospitalization", edit_patient_profile_procedures_hospitolization_path(@patient), class: "btn btn-block btn-warning ") %></li>
   <li> <%= link_to("Diagosed conditions", "#", class: "btn btn-block btn-warning ") %></li>
   <li> <%= link_to("Family history", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Social history", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Immunization and TB skin test", "#", class: "btn btn-block btn-warning ") %></li>
+
+
   <li> <%= link_to("Allergies", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Medications", "#", class: "btn btn-block btn-warning ") %></li>
-  <li> <%= link_to("Tests", "#", class: "btn btn-block btn-warning ") %></li>
+
+
   <li> <%= link_to("Current or Recent Symptoms", "#", class: "btn btn-block btn-warning ") %></li>
 
 
 </ul>
 
 
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+
+
+
+
+
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>  Welcome Dear <%= @user.fname %> <%= @user.lname%></h2>
+        <h2>Portfolio</h2>
+
+        <hr class="star-primary">
       </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag "portfolio/cabin.png",  class: "img-responsive"  %>
+
+         <p>Click to see your hospitalization information</p>
+        </a>
+
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+
+            </div>
+          </div>
+          <%= image_tag "portfolio/cake.png",  class: "img-responsive"  %>
+
+
+          <%= link_to("Enter My Medication", patient_medications_path, class: "btn btn-block btn-danger ") %>
+        </a>
+      </div>
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag "portfolio/circus.png",  class: "img-responsive"  %>
+
+          <%= link_to("Edit My Profile",intake_index_path , class: "btn btn-block btn-success ") %>
+        </a>
+      </div>
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag "portfolio/game.png",  class: "img-responsive"  %>
+
+
+
+          <%= link_to("Enter My Immunization", patient_immunizations_path, class: "btn btn-block btn-warning ") %>
+        </a>
+      </div>
+      <div class="col-sm-4 portfolio-item">
+        <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+          <div class="caption">
+            <div class="caption-content">
+              <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+          </div>
+          <%= image_tag "portfolio/safe.png",  class: "img-responsive"  %>
+
+
+          <%= link_to("Enter Care Community","#" , class: "btn btn-block btn-success ") %>
+        </a>
+      </div>
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visible-sm">
+  <a class="btn btn-primary" href="#page-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+</div>
+
+<!-- Portfolio Modals -->
+
+<% content_for :modal do %>
+
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 clo-md-*">
+              <div class="modal-body">
+                <h2>Your hospitalization information</h2>
+                <hr class="star-primary">
+                <%= image_tag "portfolio/cabin.png",  class: "img-responsive img-centered" %>
+
+
+
+
+
+                <div class="row">
+                  <div class="col-sm-4">
+
+                    <%= link_to "view", patient_profile_procedures_hospitolizations_path(@patient), class: "btn btn-block btn-success" %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= link_to "Edit", edit_patient_profile_procedures_hospitolization_path(@patient), class: "btn btn-block btn-primary" %>
+
+                  </div>
+
+
+
+                  <div class="col-sm-4">
+
+                    <%= link_to("Cancel", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
+
+                  </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <h2>My medication</h2>
+                <hr class="star-primary">
+                <%= image_tag "portfolio/cake.png",  class: "img-responsive img-centered" %>
+
+                <p>Use this area of the page to describe functionality of medication <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. </p>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <h2>My profile</h2>
+                <hr class="star-primary">
+                <%= image_tag "portfolio/circus.png",  class: "img-responsive img-centered" %>
+
+                <p> Describe about medication <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. </p>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <h2>My immunization</h2>
+                <hr class="star-primary">
+                <%= image_tag "portfolio/game.png",  class: "img-responsive img-centered" %>
+
+                <p>Use this area of the page to describe immunization project. </p>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl">
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+              <div class="modal-body">
+                <h2>My care community</h2>
+                <hr class="star-primary">
+                <%= image_tag "portfolio/safe.png",  class: "img-responsive img-centered" %>
+
+                <p>Use this area of the page to describe </p>
+                <ul class="list-inline item-details">
+                  <li>1
+                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                    </strong>
+                  </li>
+                  <li>2
+                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                    </strong>
+                  </li>
+                  <li>3
+                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                    </strong>
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-</div>
+<%end%>
 
 <%= link_to("Back to Home Page", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>

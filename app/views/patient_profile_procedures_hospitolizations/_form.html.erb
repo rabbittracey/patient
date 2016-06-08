@@ -24,7 +24,7 @@
                   <td>
 
 
-                    <%= f.select :procedure_date, options_for_select((1990...Time.now.year.to_i).to_a, '1990') ,{},class: 'form-control' %>
+                    <%= f.select(:procedure_date, options_for_select([['2011',1],['2012',2],['2013',3],['2014',4]]),{},class: 'form-control') %>
 
                   </td>
                 </tr>

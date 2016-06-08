@@ -6,7 +6,16 @@ class PatientProfileProceduresHospitolizationsController < ApplicationController
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.new
   end
 
-  
+  def index
+    @user=current_user
+    @patient=Patient.find_by_user_id(@user.id)
+    @profile_procedures_hospitolizations=@patient.patient_profile_procedures_hospitolization.all
+  end
+
+
+
+
+
 
   def create
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.new(profileprocedureshospitolization_params)

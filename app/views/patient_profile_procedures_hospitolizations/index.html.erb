@@ -2,7 +2,7 @@
 
   <div class="container">
     <h2>Surgery and Hospitolization Information</h2>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>
+
     <table class="table table-striped">
       <thead>
       <tr>
@@ -12,13 +12,13 @@
       </tr>
       </thead>
       <tbody>
-     <% @profile_procedures_hospitolizations.each do |i| %>
-      <tr>
-        <td><%= i.procedure_date%></td>
-        <td><%= i.procedure_name%></td>
+      <% @profile_procedures_hospitolizations.each do |i| %>
+          <tr>
+            <td><%= i.procedure_date%></td>
+            <td><%= i.procedure_name%></td>
 
 
-      </tr>
+          </tr>
       <%end%>
 
 
@@ -32,7 +32,7 @@
 
   <div class="col-sm-6">
 
-    <%= link_to("Back to home page", patient_home_path, class: "btn btn-block btn-warning ") %>
+    <%= link_to("Back to home page", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
 
   </div>
 </div>
