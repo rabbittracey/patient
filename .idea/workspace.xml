@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="616cd715-be55-4472-968e-ca7734cb488a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/efa_patient_engagement.sqlite3" afterPath="$PROJECT_DIR$/db/efa_patient_engagement.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20160607181832_create_patient_profile_procedures_hospitolizations.rb" afterPath="$PROJECT_DIR$/db/migrate/20160607181832_create_patient_profile_procedures_hospitolizations.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/providers/home.html.erb" afterPath="$PROJECT_DIR$/app/views/providers/home.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/intake/index.html.erb" afterPath="$PROJECT_DIR$/app/views/intake/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/patient.rb" afterPath="$PROJECT_DIR$/app/models/patient.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="patient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,12 +35,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7328647" vertical-offset="138" max-vertical-offset="735">
+            <state vertical-scroll-proportion="-17.375" vertical-offset="138" max-vertical-offset="735">
               <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/intake/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.2934973" vertical-offset="1921" max-vertical-offset="4620">
+              <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
+              <folding>
+                <element signature="tag#div#0;tag#div#0;tag#section#0" expanded="false" />
+                <element signature="tag#div#0;tag#a#0;tag#div#0;tag#div#1;tag#div#0;tag#section#0" expanded="false" />
+                <element signature="tag#div#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,13 +126,13 @@
         <option value="$PROJECT_DIR$/app/views/patients/home.html.erb" />
         <option value="$PROJECT_DIR$/app/views/providers/home.html.erb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/intake/index.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160607181832_create_patient_profile_procedures_hospitolizations.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160608184556_change_column_in_profile_table.rb" />
         <option value="$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/patient.rb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/intake/index.html.erb" />
       </list>
     </option>
   </component>
@@ -1032,16 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/intake/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6973244" vertical-offset="948" max-vertical-offset="3555">
-          <caret line="177" column="110" selection-start-line="177" selection-start-column="110" selection-end-line="177" selection-end-column="110" />
-          <folding>
-            <element signature="tag#section#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/patient_immunizations/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-24.666666" vertical-offset="23" max-vertical-offset="825">
@@ -1148,9 +1142,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7328647" vertical-offset="138" max-vertical-offset="735">
+        <state vertical-scroll-proportion="-17.375" vertical-offset="138" max-vertical-offset="735">
           <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/intake/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2934973" vertical-offset="1921" max-vertical-offset="4620">
+          <caret line="90" column="49" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
+          <folding>
+            <element signature="tag#div#0;tag#div#0;tag#section#0" expanded="false" />
+            <element signature="tag#div#0;tag#a#0;tag#div#0;tag#div#1;tag#div#0;tag#section#0" expanded="false" />
+            <element signature="tag#div#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
