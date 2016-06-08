@@ -1,11 +1,15 @@
 
 
+
+
+
 <section id="portfolio">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
+        <h2>  Welcome Dear <%= @user.fname %> <%= @user.lname%></h2>
         <h2>Portfolio</h2>
-       <h2> <%= @patient%></h2>
+
         <hr class="star-primary">
       </div>
     </div>
@@ -17,8 +21,9 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img src="images/portfolio/cabin.png" class="img-responsive" alt="">
-          <%= link_to("View My Doctors", immunizations_path(@patient), class: "btn btn-block btn-info ") %>
+          <%= image_tag "portfolio/cabin.png",  class: "img-responsive"  %>
+
+          <%= link_to("View My Doctors","#" , class: "btn btn-block btn-info ") %>
         </a>
 
       </div>
@@ -30,7 +35,8 @@
 
             </div>
           </div>
-          <img src="images/portfolio/cake.png" class="img-responsive" alt="">
+          <%= image_tag "portfolio/cake.png",  class: "img-responsive"  %>
+
 
           <%= link_to("Enter My Medication", patient_medications_path, class: "btn btn-block btn-danger ") %>
         </a>
@@ -42,8 +48,9 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img src="images/portfolio/circus.png" class="img-responsive" alt="">
-          <%= link_to("Edit My Profile", immunizations_path, class: "btn btn-block btn-success ") %>
+          <%= image_tag "portfolio/circus.png",  class: "img-responsive"  %>
+
+          <%= link_to("Edit My Profile",patient_survey_path , class: "btn btn-block btn-success ") %>
         </a>
       </div>
       <div class="col-sm-4 portfolio-item">
@@ -53,10 +60,11 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img src="images/portfolio/game.png" class="img-responsive" alt="">
+          <%= image_tag "portfolio/game.png",  class: "img-responsive"  %>
 
 
-          <%= link_to("Enter My Immunization", immunizations_path, class: "btn btn-block btn-warning ") %>
+
+          <%= link_to("Enter My Immunization", patient_immunizations_path, class: "btn btn-block btn-warning ") %>
         </a>
       </div>
       <div class="col-sm-4 portfolio-item">
@@ -66,9 +74,10 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img src="images/portfolio/safe.png" class="img-responsive" alt="">
+          <%= image_tag "portfolio/safe.png",  class: "img-responsive"  %>
 
-          <%= link_to("Enter Care Community", immunizations_path, class: "btn btn-block btn-success ") %>
+
+          <%= link_to("Enter Care Community","#" , class: "btn btn-block btn-success ") %>
         </a>
       </div>
       <div class="col-sm-4 portfolio-item">
@@ -78,9 +87,9 @@
               <i class="fa fa-search-plus fa-3x"></i>
             </div>
           </div>
-          <img src="images/portfolio/submarine.png" class="img-responsive" alt="">
+          <%= image_tag "portfolio/submarine.png",  class: "img-responsive"  %>
 
-          <%= link_to("Enter Clinical Assessment", immunizations_path, class: "btn btn-block btn-primary ") %>
+          <%= link_to("Enter Clinical Assessment","#", class: "btn btn-block btn-primary ") %>
         </a>
       </div>
 

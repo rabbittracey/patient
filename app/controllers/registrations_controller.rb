@@ -12,10 +12,12 @@ class RegistrationsController < Devise::RegistrationsController
     def after_sign_up_path_for(user)
       #this can be defined based on the user type
       if user.user_type=="1"
+        @patient=Patient.create(user_id: user.id)
         new_patient_survey_path
         # patient_path(user)
       else
-        providers_path(user)
+        @provider=Provider.create(user_id:user.id)
+        provider_home_path(@provider)
       end
     end
 

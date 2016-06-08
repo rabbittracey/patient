@@ -1,10 +1,18 @@
 class PatientSurveysController < ApplicationController
   def new
+
     @user=current_user
-    @patient=Patient.new
-    @patient.user_id=@user.id
+    @patient=Patient.find_by_user_id(@user.id)
+
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.new
+    @profile_procedures_hospitolization.patient_id=@patient.id
   end
+
+
+
+
+
+
 
 
 
@@ -12,9 +20,9 @@ class PatientSurveysController < ApplicationController
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.new(patientsurvey_params)
     @user=current_user
     @patient=Patient.find_by_user_id(@user.id)
-    @patientsurvey.patient_id=@patient.id
-    if @patientsurvey.save
-      redirect_to patient_path(@patient)
+    @profile_procedures_hospitolization.patient_id=@patient.id
+    if @profile_procedures_hospitolization.save
+      redirect_to patient_home_path(@patient)
     else
       render 'new'
     end
@@ -23,20 +31,24 @@ class PatientSurveysController < ApplicationController
 
   def show
 
+    @user=current_user
+    @patient=Patient.find_by_user_id(@user.id)
 
-    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
+
+
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_patient_id(@patient.id)
+
   end
   def edit
     @user=current_user
     @patient=Patient.find_by_user_id(@user.id)
-
-    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_patient_id(params[:id])
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_patient_id(@patient.id)
   end
 
   def update
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
     if @patientsurvey.update(patientsurvey_params)
-      redirect_to @patientsurvey
+      redirect_to patient_home_path(@patient)
     else
       render 'edit'
     end
@@ -47,7 +59,7 @@ class PatientSurveysController < ApplicationController
   def destroy
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
     @profile_procedures_hospitolization.destroy
-    redirect_to patient_path
+    redirect_to patient_home_path
 
   end
 
