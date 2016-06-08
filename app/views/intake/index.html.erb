@@ -239,7 +239,38 @@
                 <hr class="star-primary">
                 <%= image_tag "portfolio/circus.png",  class: "img-responsive img-centered" %>
 
-                <p> Describe about medication <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. </p>
+
+
+                <div class="row">
+                  <div class="col-sm-4">
+
+                    <%= link_to "view", patient_profile_allergies_path(@patient), class: "btn btn-block btn-success" %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= link_to "Edit", edit_patient_profile_allergy_path(@patient), class: "btn btn-block btn-primary" %>
+
+                  </div>
+
+
+
+                  <div class="col-sm-4">
+
+                    <%= link_to("Cancel", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
+
+                  </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
 
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
               </div>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+
+
+    <h2>Surgery and Hospitolization Information</h2>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Allergy Name</th>
+        <th>Reaciton Description</th>
+
+      </tr>
+      </thead>
+      <tbody>
+
+          <tr>
+            <td><%= @patient_profile_allergy.allergy_name%></td>
+            <td><%= @patient_profile_allergy.reaction%></td>
+
+
+          </tr>
+
+
+
+      </tbody>
+    </table>
+
+
+
+
+</div>
+
+<%= link_to 'Edit', edit_patient_profile_allergy_path(@patient_profile_allergy) %> |
+<%= link_to 'Back', patient_profile_allergies_path %>

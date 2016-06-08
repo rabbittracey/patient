@@ -5,8 +5,7 @@ class CreatePatientProfileProceduresHospitolizations < ActiveRecord::Migration
 
 
     t.string   :procedure_name, limit: 200
-    t.string   :description,    limit:
-        2000
+    t.string   :description,    limit: 2000
     t.datetime :procedure_date
     t.integer  :patient_id
 

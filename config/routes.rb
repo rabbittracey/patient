@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :patient_profile_allergies
   resources :intake
   resources :patient_profile_procedures_hospitolizations
 

@@ -1,0 +1,48 @@
+<%= form_for(@patient_profile_allergy) do |f| %>
+  <% if @patient_profile_allergy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient_profile_allergy.errors.count, "error") %> prohibited this patient_profile_allergy from being saved:</h2>
+
+      <ul>
+      <% @patient_profile_allergy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="col-xs-12">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Allergy Name</th>
+            <th>Reactions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="rowContent in surgeryRows">
+
+            <td><%= f.text_field :allergy_name, class: "form-control" %></td>
+            <td><%= f.text_field :reaction, class: "form-control" %></td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
