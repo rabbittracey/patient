@@ -1,0 +1,36 @@
+<h1>Intake#index</h1>
+<p>Choose the intake form you want to finish </p>
+<p>Create New </p>
+
+<ul>
+  <li> <%= link_to("Surgery and Hospitalization", new_patient_profile_procedures_hospitolization_path, class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Diagosed conditions", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Family history", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Social history", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Immunization and TB skin test", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Allergies", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Medications", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Tests", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Current or Recent Symptoms", "#", class: "btn btn-block btn-warning ") %></li>
+
+
+</ul>
+
+
+<p>Edit </p>
+
+<ul>
+  <li> <%= link_to("Surgery and Hospitalization", edit_patient_profile_procedures_hospitolization_path(@patient), class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Diagosed conditions", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Family history", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Social history", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Immunization and TB skin test", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Allergies", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Medications", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Tests", "#", class: "btn btn-block btn-warning ") %></li>
+  <li> <%= link_to("Current or Recent Symptoms", "#", class: "btn btn-block btn-warning ") %></li>
+
+
+</ul>
+
+<%= link_to("Back to Home Page", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>

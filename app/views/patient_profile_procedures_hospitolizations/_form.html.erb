@@ -1,0 +1,44 @@
+<%= form_for @profile_procedures_hospitolization do |f| %>
+    <div class="col-md-12 column">
+      <div class="box box-solid box-success collapsed-box">
+        <div class="box-header with-border">
+          <h3 class="box-title bg-info">Surgeries, Major Injuries and Hospitalízations</h3>
+          <div class="box-tools pull-right">
+            <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="box-body patientProfileInfo">
+          <div class="row">
+            <div class="col-xs-12">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>Surgeries---Major Injuries---Hospitalízations</th>
+                  <th>Year</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="rowContent in surgeryRows">
+
+                  <td><%= f.text_field :procedure_name, class: "form-control" %></td>
+                  <td>
+
+
+                    <%= f.select :procedure_date, options_for_select((1990...Time.now.year.to_i).to_a, '1990') ,{},class: 'form-control' %>
+
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-xs-12">
+              <a class="btn btn-warning" ng-click="addRowToSurgery()" >Add Row</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <%= f.submit "Sumbit", class: 'btn btn-primary'%>
+    </div>
+<%end%>

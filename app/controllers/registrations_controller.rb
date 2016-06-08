@@ -13,7 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
       #this can be defined based on the user type
       if user.user_type=="1"
         @patient=Patient.create(user_id: user.id)
-        new_patient_survey_path
+        intake_index_path
         # patient_path(user)
       else
         @provider=Provider.create(user_id:user.id)

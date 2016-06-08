@@ -1,0 +1,2 @@
+module PatientProfileProceduresHospitolizationsHelper
+end

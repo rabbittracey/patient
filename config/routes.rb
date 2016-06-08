@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :intake
+  resources :patient_profile_procedures_hospitolizations
+
+
+
   get 'page/home'
 
   get 'page/contact'
@@ -9,6 +14,7 @@ Rails.application.routes.draw do
   get 'user/new'
 
   get 'user/edit'
+  get 'intake/index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   get 'welcome/index'
@@ -30,5 +36,5 @@ Rails.application.routes.draw do
   resources :patient_immunizations
 
   resources :patient_medications
-  resources :patient_profile_procedures_hospitolizations
+
 end
