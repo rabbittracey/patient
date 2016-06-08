@@ -110,6 +110,9 @@
 </div>
 
 <!-- Portfolio Modals -->
+
+<% content_for :modal do %>
+
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
 
   <div class="modal-content">
@@ -125,7 +128,8 @@
           <div class="modal-body">
             <h2>My Doctors</h2>
             <hr class="star-primary">
-            <img src="images/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+            <%= image_tag "portfolio/cabin.png",  class: "img-responsive img-centered" %>
+
             <p>Use this function to introduce how to give access to your doctors <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Lead to my doctors</a>. </p>
 
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
@@ -150,7 +154,8 @@
           <div class="modal-body">
             <h2>My medication</h2>
             <hr class="star-primary">
-            <img src="images/portfolio/cake.png" class="img-responsive img-centered" alt="">
+            <%= image_tag "portfolio/cake.png",  class: "img-responsive img-centered" %>
+
             <p>Use this area of the page to describe functionality of medication <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. </p>
 
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -174,7 +179,8 @@
           <div class="modal-body">
             <h2>My profile</h2>
             <hr class="star-primary">
-            <img src="images/portfolio/circus.png" class="img-responsive img-centered" alt="">
+            <%= image_tag "portfolio/circus.png",  class: "img-responsive img-centered" %>
+
             <p> Describe about medication <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. </p>
 
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -198,7 +204,8 @@
           <div class="modal-body">
             <h2>My immunization</h2>
             <hr class="star-primary">
-            <img src="images/portfolio/game.png" class="img-responsive img-centered" alt="">
+            <%= image_tag "portfolio/game.png",  class: "img-responsive img-centered" %>
+
             <p>Use this area of the page to describe immunization project. </p>
 
             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -222,7 +229,8 @@
           <div class="modal-body">
             <h2>My care community</h2>
             <hr class="star-primary">
-            <img src="images/portfolio/safe.png" class="img-responsive img-centered" alt="">
+            <%= image_tag "portfolio/safe.png",  class: "img-responsive img-centered" %>
+
             <p>Use this area of the page to describe </p>
             <ul class="list-inline item-details">
               <li>1
@@ -259,7 +267,8 @@
           <div class="modal-body">
             <h2>My Clinical Assessment</h2>
             <hr class="star-primary">
-            <img src="images/portfolio/submarine.png" class="img-responsive img-centered" alt="">
+            <%= image_tag "portfolio/submarine.png",  class: "img-responsive img-centered" %>
+
             <p>Introduce this module</p>
             <ul class="list-inline item-details">
               <li>1:
@@ -282,3 +291,4 @@
     </div>
   </div>
 </div>
+<%end%>
