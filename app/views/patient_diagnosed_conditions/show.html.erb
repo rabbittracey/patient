@@ -2,7 +2,7 @@
 
   <div class="container">
     <h2>Diagnosed Condition</h2>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>
+
     <table class="table table-striped">
       <thead>
       <tr>
@@ -25,12 +25,16 @@
   </div>
 
 
+  <div class="col-sm-2">
+
+    <%= link_to("Back", patient_diagnosed_conditions_path, class: "btn btn-success ") %>
+
+  </div>
 
 
+  <div class="col-sm-2">
 
-  <div class="col-sm-6">
-
-    <%= link_to("Back to home page", patient_home_path, class: "btn btn-block btn-warning ") %>
+    <%= link_to("Edit", edit_patient_diagnosed_condition_path(@diagnosed_condition), class: "btn btn-warning ") %>
 
   </div>
 </div>

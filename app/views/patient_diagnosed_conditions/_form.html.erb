@@ -2,7 +2,7 @@
     <div class="col-md-12 column">
       <div class="box box-solid box-success collapsed-box">
         <div class="box-header with-border">
-          <h3 class="box-title bg-info">Diagnosed Conditions</h3>
+
           <div class="box-tools pull-right">
             <a type="button" class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
           </div>
@@ -12,15 +12,21 @@
           <!--% dc=["Anemia", "Poor Blood Clotting", "Diabetes type 1", "Diabetes type 2", "HIV/AIDS", "Thyroid,Overactive", "Thyroid, Underactive", "Goiter", "Alcoholism", "Attention Deficit Disorder (ADD)", "Depression", "Serious Emotional Problem", "Nervous Breakdown", "Drug Abuse", "Migraine Headaches", "Polio", "Epilepsy or Convulsions", "Stroke", "Glaucoma", "Cataracts", "Blindness Either Eye", "Ear lnfections", "", "Hearing Problem", "Hay Fever", "Hardening of Arteries", "Heart Murmur", "Abnormal Electrocardiogram", "High Blood Pressure", "Enlarged Heart", "Angina", "Heart Attack", "Rheumatic Fever", "Blood Clot", "Phlebitis", "Varicose Veins", "Asthma", "Chronic Bronchitis", "Emphysema", "Tuberculosis", "Diverticulosis/Diverticultis", "Pancreatitis", "Gall Stones", "Hepatitis", "Cirrhosis of Liver", "Stomach or Duodenal Ulcer", "Reflux Esophagitis", "", "Colon or Bowel Trouble", "Hernia", "Hemorrhoids or Piles", "Dysentry or Serious Diarrhea", "Kidney or Bladder Infection", "Kidney Stones", "Cystitis", "Syphilis", "Gonorrhea", "Genital Herpes", "Genital Warts", "Slipped Disc", "Gout", "Osteoporosis", "Arthritis", "Eczema", "Psoriasis", "Skin Disease", "Cancer", "", "Men", "Enlarged prostate", "Benign prostatic"].reject{|x| x.chomp.strip.size==0 } %-->
           <div class="row">
 
+
           <%= f.label :condition_name %>
+
+
           <%= f.select(:condition_name, options_for_select([['Anemia'], ['Poor Blood Clotting'], ['Diabetes type 1'],['Diabetes type 2'],['HIV/AIDS'],['Thyroid,Overactive'],['Thyroid, Underactive'],['Goiter'],['Alcoholism'],['Attention Deficit Disorder (ADD)'],['Depression'],['Serious Emotional Problem'],['Nervous Breakdown'],['Drug Abuse'],['Migraine Headaches'],['Polio'],['Epilepsy or Convulsions'],['Stroke'],['Glaucoma'],['Cataracts'],['Blindness Either Eye'],['Ear lnfections'],['Hearing Problem'],['Hay Fever'],['Hardening of Arteries'],['Heart Murmur'],['Abnormal Electrocardiogram'],['High Blood Pressure'],['Enlarged Heart'],['Angina'],['Heart Attack'],['Rheumatic Fever'],['Blood Clot'],['Phlebitis'],['Varicose Veins'],['Asthma'],['Chronic Bronchitis'],['Emphysema'],['Tuberculosis'],['Diverticulosis/Diverticultis'],['Pancreatitis'],['Gall Stones'],['Hepatitis'],['Cirrhosis of Liver']]),{},class: "form-control",placeholder: "condition name") %>
 
           </div>
         </div>
       </div>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-6">
       <%= f.submit "Sumbit", class: 'btn btn-primary'%>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("Cancel", intake_index_path, class: "btn btn-warning ") %>
     </div>
 <%end%>
 

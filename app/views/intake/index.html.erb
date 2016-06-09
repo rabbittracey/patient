@@ -197,7 +197,7 @@
                     <%= link_to "view", patient_diagnosed_conditions_path(@patient), class: "btn btn-block btn-success" %>
                   </div>
                   <div class="col-sm-4">
-                    <%= link_to "Edit", edit_patient_diagnosed_condition_path(@patient), class: "btn btn-block btn-primary" %>
+                    <%= link_to "New", new_patient_diagnosed_condition_path, class: "btn btn-block btn-primary" %>
 
                   </div>
 
@@ -205,14 +205,14 @@
 
                   <div class="col-sm-4">
 
-                    <%= link_to("Cancel", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
+                    <%= link_to("Cancel", intake_index_path, class: "btn btn-block btn-warning ") %>
 
                   </div>
 
 
                 </div>
 
-                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
 
               </div>
             </div>
@@ -243,10 +243,10 @@
                 <div class="row">
                   <div class="col-sm-4">
 
-                    <%= link_to "view", patient_profile_allergies_path(@patient), class: "btn btn-block btn-success" %>
+                    <%= link_to "View", patient_profile_allergies_path(@patient), class: "btn btn-block btn-success" %>
                   </div>
                   <div class="col-sm-4">
-                    <%= link_to "Edit", edit_patient_profile_allergy_path(@patient), class: "btn btn-block btn-primary" %>
+                    <%= link_to "New", new_patient_profile_allergy_path(@patient), class: "btn btn-block btn-primary" %>
 
                   </div>
 
@@ -254,7 +254,7 @@
 
                   <div class="col-sm-4">
 
-                    <%= link_to("Cancel", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
+                    <%= link_to("Cancel", intake_index_path, class: "btn btn-block btn-warning ") %>
 
                   </div>
 
@@ -263,15 +263,6 @@
 
 
 
-
-
-
-
-
-
-
-
-                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ class PatientDiagnosedConditionsController < ApplicationController
     @patient=Patient.find_by_user_id(@user.id)
     @diagnosed_condition.patient_id=@patient.id
     if @diagnosed_condition.save
-      redirect_to diagnosed_conditions_path
+      redirect_to patient_diagnosed_conditions_path
     else
       render 'new'
     end
@@ -34,9 +34,7 @@ class PatientDiagnosedConditionsController < ApplicationController
   end
   def edit
 
-    @patient=Patient.find_by_id(params[:id])
-
-    @diagnosed_condition=PatientDiagnosedCondition.find_by_patient_id(@patient.id)
+    @diagnosed_condition=PatientDiagnosedCondition.find_by_id(params[:id])
   end
 
   def update
@@ -51,9 +49,15 @@ class PatientDiagnosedConditionsController < ApplicationController
 
   end
   def destroy
-    @diagnosed_condition=PatientDiagnosedCondition.find_by_id(params[:id])
+
+
+
     @diagnosed_condition.destroy
-    redirect_to intake_index_path
+    respond_to do |format|
+      format.html { redirect_to @diagnosed_conditions_url, notice: 'Patient profile allergy was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+
 
   end
 

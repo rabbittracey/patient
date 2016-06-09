@@ -3,16 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="616cd715-be55-4472-968e-ca7734cb488a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/efa_patient_engagement.sqlite3" afterPath="$PROJECT_DIR$/db/efa_patient_engagement.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/_form.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/intake/index.html.erb" afterPath="$PROJECT_DIR$/app/views/intake/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/patient.rb" afterPath="$PROJECT_DIR$/app/models/patient.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_profile_allergies/index.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_profile_allergies/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/show.html.erb" afterPath="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/show.html.erb" />
     </list>
     <ignored path="patient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,31 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/family_histories/_form.html.erb">
+      <file leaf-file-name="patient_profile_allergies_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/patient_profile_allergies_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-28.166666" vertical-offset="269" max-vertical-offset="1365">
-              <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1440">
+              <caret line="71" column="7" selection-start-line="67" selection-start-column="4" selection-end-line="71" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/patient_surveys/_form.html.erb">
+      <file leaf-file-name="patient_diagnosed_conditions_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.125" vertical-offset="456" max-vertical-offset="8310">
-              <caret line="61" column="290" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="290" />
+            <state vertical-scroll-proportion="0.7491749" vertical-offset="431" max-vertical-offset="1170">
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.791667" vertical-offset="104" max-vertical-offset="780">
-              <caret line="21" column="57" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="57" />
+            <state vertical-scroll-proportion="-9.666667" vertical-offset="38" max-vertical-offset="660">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -68,78 +64,18 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/family_histories/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.291666" vertical-offset="44" max-vertical-offset="660">
+            <state vertical-scroll-proportion="-16.083334" vertical-offset="49" max-vertical-offset="660">
               <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/family_histories/show.html.erb">
+      <file leaf-file-name="family_histories_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/family_histories_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625" vertical-offset="210" max-vertical-offset="705">
-              <caret line="39" column="66" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="66" />
-              <folding>
-                <marker date="1465487906000" expanded="true" signature="57:543" placeholder="..." />
-                <marker date="1465487906000" expanded="true" signature="136:532" placeholder="..." />
-                <marker date="1465487906000" expanded="true" signature="148:285" placeholder="..." />
-                <marker date="1465487906000" expanded="true" signature="157:272" placeholder="..." />
-                <marker date="1465487906000" expanded="true" signature="297:521" placeholder="..." />
-                <marker date="1465487906000" expanded="true" signature="307:505" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/intake/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.089286" vertical-offset="1965" max-vertical-offset="5565">
-              <caret line="150" column="110" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="110" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patient_profile_procedures_hospitolizations_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="945">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-              <folding>
-                <element signature="e#1055#1360#0" expanded="false" />
-                <element signature="e#1363#1568#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1986755" vertical-offset="135" max-vertical-offset="750">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375" vertical-offset="195" max-vertical-offset="735">
-              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patient_profile_allergies_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/patient_profile_allergies_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1440">
-              <caret line="29" column="84" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1245">
+              <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -158,8 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/patient_medications_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/page/home.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/patient_surveys_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/patients/about.html.erb" />
         <option value="$PROJECT_DIR$/app/views/patients/contact.html.erb" />
@@ -188,7 +122,6 @@
         <option value="$PROJECT_DIR$/app/views/patient_profile_allergies/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/patient_profile_allergies_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_allergies/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/patient_profile_allergies/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160609135915_create_family_histories.rb" />
         <option value="$PROJECT_DIR$/app/models/family_history.rb" />
@@ -202,13 +135,16 @@
         <option value="$PROJECT_DIR$/app/models/patient.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160609162118_create_patient_diagnosed_conditions.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/intake/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/intake/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/patient_profile_allergies/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb" />
       </list>
     </option>
   </component>
@@ -977,30 +913,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160602131957_create_appointments.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="461">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160602131109_create_providers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="461">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160531181803_create_patients.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="461">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160602213954_addpatient_migration.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432">
@@ -1097,22 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="635">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="577">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.1890625" vertical-offset="121" max-vertical-offset="1020">
@@ -1193,14 +1089,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63148147" vertical-offset="199" max-vertical-offset="810">
-          <caret line="36" column="16" selection-start-line="21" selection-start-column="7" selection-end-line="36" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.0" vertical-offset="15" max-vertical-offset="645">
@@ -1241,22 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/patient_diagnosed_condition.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.041666" vertical-offset="62" max-vertical-offset="615">
-          <caret line="33" column="82" selection-start-line="33" selection-start-column="82" selection-end-line="33" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/family_history.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
@@ -1269,22 +1141,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/family_histories_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1245">
-          <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1110">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1305,56 +1161,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/family_histories/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.291666" vertical-offset="44" max-vertical-offset="660">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/family_histories/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.625" vertical-offset="210" max-vertical-offset="705">
           <caret line="39" column="66" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="66" />
           <folding>
-            <marker date="1465487906000" expanded="true" signature="57:543" placeholder="..." />
-            <marker date="1465487906000" expanded="true" signature="136:532" placeholder="..." />
-            <marker date="1465487906000" expanded="true" signature="148:285" placeholder="..." />
-            <marker date="1465487906000" expanded="true" signature="157:272" placeholder="..." />
-            <marker date="1465487906000" expanded="true" signature="297:521" placeholder="..." />
-            <marker date="1465487906000" expanded="true" signature="307:505" placeholder="..." />
+            <marker date="1465487906000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1465487906000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1465487906000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1465487906000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1465487906000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1465487906000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/intake/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.089286" vertical-offset="1965" max-vertical-offset="5565">
-          <caret line="150" column="110" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="110" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/patient_profile_allergies_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1440">
-          <caret line="29" column="84" selection-start-line="28" selection-start-column="4" selection-end-line="29" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88740456" vertical-offset="0" max-vertical-offset="600">
-          <caret line="31" column="78" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/patient_profile_procedures_hospitolizations_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="945">
+        <state vertical-scroll-proportion="0.5480607" vertical-offset="245" max-vertical-offset="945">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding>
             <element signature="e#1055#1360#0" expanded="false" />
@@ -1379,18 +1203,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375" vertical-offset="195" max-vertical-offset="735">
-          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.15050167" vertical-offset="135" max-vertical-offset="750">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/patient_immunizations/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1986755" vertical-offset="135" max-vertical-offset="750">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state vertical-scroll-proportion="9.375" vertical-offset="225" max-vertical-offset="825">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_diagnosed_conditions/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="585">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/patient_diagnosed_condition.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.054744527" vertical-offset="0" max-vertical-offset="548">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/intake/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9107144" vertical-offset="3711" max-vertical-offset="5430">
+          <caret line="262" column="0" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="577">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="635">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875" vertical-offset="255" max-vertical-offset="810">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_procedures_hospitolizations/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.708333" vertical-offset="253" max-vertical-offset="735">
+          <caret line="42" column="68" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_profile_allergies/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7265625" vertical-offset="0" max-vertical-offset="640">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_diagnosed_conditions/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.625" vertical-offset="60" max-vertical-offset="675">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/patient_profile_allergies_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1440">
+          <caret line="71" column="7" selection-start-line="67" selection-start-column="4" selection-end-line="71" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/family_histories/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.083334" vertical-offset="49" max-vertical-offset="660">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/family_histories_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="639" max-vertical-offset="1245">
+          <caret line="34" column="81" selection-start-line="34" selection-start-column="81" selection-end-line="34" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/patient_diagnosed_conditions/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.666667" vertical-offset="38" max-vertical-offset="660">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/patient_diagnosed_conditions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7491749" vertical-offset="431" max-vertical-offset="1170">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding />
         </state>
       </provider>

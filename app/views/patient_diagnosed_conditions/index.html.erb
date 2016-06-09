@@ -7,13 +7,16 @@
       <thead>
       <tr>
         <th>Description</th>
-
+        <th> Operations</th>
       </tr>
       </thead>
       <tbody>
       <% @diagnosed_conditions.each do |i| %>
           <tr>
             <td><%= i.condition_name%></td>
+             <td><%= link_to 'Show', i%>
+            <%= link_to 'Edit', edit_patient_diagnosed_condition_path(i) %>
+            <%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
 
           </tr>
@@ -30,7 +33,7 @@
 
   <div class="col-sm-6">
 
-    <%= link_to("Back to home page", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
-    <%= link_to 'New Patient Diagnosed Condition', new_patient_diagnosed_condition_path %>
+    <%= link_to("Cancel", intake_index_path, class: "btn  btn-warning ") %>
+    <%= link_to 'New ', new_patient_diagnosed_condition_path ,class: "btn  btn-success "%>
   </div>
 </div>
