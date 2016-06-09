@@ -1,0 +1,85 @@
+<%= form_for(@family_history) do |f| %>
+  <% if @family_history.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@family_history.errors.count, "error") %> prohibited this family_history from being saved:</h2>
+
+      <ul>
+      <% @family_history.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+
+
+
+
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Relationship </th>
+                  <th>Conditions</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="rowContent in surgeryRows">
+
+                  <td><%= f.text_field :fname, class: "form-control" %></td>
+                  <td><%= f.text_field :lname, class: "form-control" %></td>
+                  <td><%= f.select :relationship, options_for_select([
+                                                               ["Granddad_father"],
+                                                               ["Grandmom_father"],
+                                                               ["Father"],
+                                                               ["Granddad_mother"],
+                                                               ["Grandmom_mother"],
+                                                               ["Mother"],
+                                                               ["Brother"],
+                                                               ["Sister"],
+                                                               ]), :class => 'genForm_dropBox' %></td>
+                  <td><%= f.select :condition_id, options_for_select(
+                          ["Alcoholism", "Allergies_or_Asthma", "Breast_Cancer", "Cancer_Colon", "Ovary_Cancer", "Cancer_Prostate", "diabets_type_1", "diabets_type_2", "Heart_Attack", "High_Blood_Pressure", "High_Cholesterol", "Mental_illness", "Osteoporosis", "Sickle Cell Disease", "Stroke"]),:class => 'genForm_dropBox' %></td>
+
+
+                </tr>
+                </tbody>
+              </table>
+
+
+
+
+
+
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<% end %>

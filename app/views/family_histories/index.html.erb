@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Family Histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Relationship</td>
+      <td>Condition</td>
+      <td>Operations</td>
+
+    </tr>
+  </thead>
+
+
+
+
+
+  <tbody>
+    <% @family_histories.each do |family_history| %>
+      <tr>
+        <td><%= family_history.fname%></td>
+        <td><%= family_history.lname%></td>
+        <td><%= family_history.relationship%></td>
+        <td><%= family_history.condition_id%></td>
+        <td><%= link_to 'Show', family_history %>
+        <%= link_to 'Edit', edit_family_history_path(family_history) %>
+        <%= link_to 'Destroy', family_history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Family history', new_family_history_path %>

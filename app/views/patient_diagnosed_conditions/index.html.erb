@@ -1,0 +1,36 @@
+<div class="container">
+
+  <div class="container">
+    <h2>Diagnosed Condition</h2>
+
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Description</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <% @diagnosed_conditions.each do |i| %>
+          <tr>
+            <td><%= i.condition_name%></td>
+
+
+          </tr>
+      <%end%>
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+  <div class="col-sm-6">
+
+    <%= link_to("Back to home page", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
+    <%= link_to 'New Patient Diagnosed Condition', new_patient_diagnosed_condition_path %>
+  </div>
+</div>

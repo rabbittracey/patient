@@ -1,38 +1,44 @@
 <div class="container">
 
-  <div class="container">
-    <h2>Surgery and Hospitolization Information</h2>
 
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>Year</th>
-        <th>Description</th>
 
+
+
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Profile Surgery and Hospitolization</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Procedure Name</th>
+    <th>Description</th>
+    <th>Operations</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @profile_procedures_hospitolizations.each do |i| %>
+      <tr >
+        <td><%= i.procedure_name%></td>
+        <td><%= i.description%></td>
+        <td><%= link_to 'Show', i%>
+          <%= link_to 'Edit', edit_patient_profile_procedures_hospitolization_path(i) %>
+          <%= link_to 'Destroy', patient_profile_procedures_hospitolizations_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      </thead>
-      <tbody>
-      <% @profile_procedures_hospitolizations.each do |i| %>
-          <tr>
-            <td><%= i.procedure_date%></td>
-            <td><%= i.procedure_name%></td>
-
-
-          </tr>
-      <%end%>
-
-
-      </tbody>
-    </table>
-  </div>
+  <% end %>
+  </tbody>
+</table>
 
 
 
-
-
-  <div class="col-sm-6">
-
-    <%= link_to("Back to home page", patient_home_path(@patient), class: "btn btn-block btn-warning ") %>
-
-  </div>
+<%= link_to 'New Record', new_patient_profile_procedures_hospitolization_path,class: "btn  btn-success " %>
+  <%= link_to 'Cancel', intake_index_path,class: "btn  btn-warning " %>
 </div>

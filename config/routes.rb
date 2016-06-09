@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :family_histories
   resources :patient_profile_allergies
   resources :intake
   resources :patient_profile_procedures_hospitolizations
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
   #resources :providers
   resources :patient_surveys
   resources :patient_immunizations
-
+  resources :patient_diagnosed_conditions
   resources :patient_medications
 
 end

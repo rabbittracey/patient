@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+
+
+  <h2>Family History Information</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Relationship</th>
+      <th>Condition</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+      <td><%= @family_history.fname%></td>
+      <td><%= @family_history.lname%></td>
+      <td><%= @family_history.relationship%></td>
+      <td><%= @family_history.condition_id%></td>
+
+
+    </tr>
+
+
+
+    </tbody>
+  </table>
+
+
+
+
+</div>
+
+<%= link_to 'Edit', edit_family_history_path(@family_history) %> |
+<%= link_to 'Back', family_histories_path %>

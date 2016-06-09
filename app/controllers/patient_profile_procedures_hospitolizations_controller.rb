@@ -23,7 +23,7 @@ class PatientProfileProceduresHospitolizationsController < ApplicationController
     @patient=Patient.find_by_user_id(@user.id)
     @profile_procedures_hospitolization.patient_id=@patient.id
     if @profile_procedures_hospitolization.save
-      redirect_to intake_index_path
+      redirect_to patient_profile_procedures_hospitolizations_path
     else
       render 'new'
     end
@@ -32,14 +32,13 @@ class PatientProfileProceduresHospitolizationsController < ApplicationController
 
   def show
 
-
     @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
   end
   def edit
 
-    @patient=Patient.find_by_id(params[:id])
 
-    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_patient_id(@patient.id)
+
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
   end
 
   def update
@@ -67,5 +66,7 @@ class PatientProfileProceduresHospitolizationsController < ApplicationController
   def profileprocedureshospitolization_params
     params.require(:patient_profile_procedures_hospitolization).permit(:procedure_name, :description, :procedure_date)
   end
+
+
 
 end

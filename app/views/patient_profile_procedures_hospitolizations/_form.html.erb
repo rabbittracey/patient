@@ -14,6 +14,7 @@
                 <thead>
                 <tr>
                   <th>Surgeries---Major Injuries---Hospitalízations</th>
+                  <th>Procedure Description</th>
                   <th>Year</th>
                 </tr>
                 </thead>
@@ -21,24 +22,26 @@
                 <tr ng-repeat="rowContent in surgeryRows">
 
                   <td><%= f.text_field :procedure_name, class: "form-control" %></td>
+                  <td><%= f.text_field :description, class: "form-control" %></td>
                   <td>
 
 
-                    <%= f.select(:procedure_date, options_for_select([['2011',1],['2012',2],['2013',3],['2014',4]]),{},class: 'form-control') %>
+                    <%= f.select(:procedure_date, options_for_select([['2011',1],['2012',2],['2013',3]]),{},class: 'form-control') %>
 
                   </td>
                 </tr>
                 </tbody>
               </table>
             </div>
-            <div class="col-xs-12">
-              <a class="btn btn-warning" ng-click="addRowToSurgery()" >Add Row</a>
-            </div>
+
           </div>
         </div>
       </div>
     </div>
-    <div class="col-xs-12">
-      <%= f.submit "Sumbit", class: 'btn btn-primary'%>
+    <div class="col-xs-6">
+      <%= f.submit "Sumbit", class: 'btn  btn-primary'%>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("Cancel", patient_profile_procedures_hospitolizations_path, class: "btn  btn-warning ") %>
     </div>
 <%end%>
