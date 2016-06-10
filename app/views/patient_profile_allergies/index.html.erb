@@ -1,8 +1,9 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Patient Profile Allergies</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Allergy Name</th>
@@ -29,7 +30,7 @@
 
 <br>
 
-<%= link_to 'New ', new_patient_profile_allergy_path,class: "btn  btn-warning " %>
-<%= link_to 'Cancel', intake_index_path ,class: "btn  btn-success "%>
+<%= link_to 'New Record', new_patient_profile_allergy_path,class: "btn  btn-success " %>
+<%= link_to 'Cancel', intake_index_path ,class: "btn  btn-warning "%>
 
-
+</div>

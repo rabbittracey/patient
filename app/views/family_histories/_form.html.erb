@@ -14,11 +14,6 @@
 
 
 
-
-
-
-
-
               <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -58,9 +53,11 @@
 
 
 
-
-    <div class="actions">
-      <%= f.submit %>
+    <div class="col-xs-6">
+      <%= f.submit "Sumbit", class: 'btn  btn-primary'%>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("Cancel", family_histories_path, class: "btn  btn-warning ") %>
     </div>
 
 

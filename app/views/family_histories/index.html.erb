@@ -1,8 +1,10 @@
+
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Family Histories</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <td>First Name</td>
@@ -35,4 +37,7 @@
 
 <br>
 
-<%= link_to 'New Family history', new_family_history_path %>
+<%= link_to 'New Record', new_family_history_path,class: "btn  btn-success " %>
+<%= link_to 'Cancel', intake_index_path ,class: "btn  btn-warning "%>
+
+</div>
