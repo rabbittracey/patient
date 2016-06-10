@@ -31,7 +31,7 @@
         <td><%= i.description%></td>
         <td><%= link_to 'Show', i%>
           <%= link_to 'Edit', edit_patient_profile_procedures_hospitolization_path(i) %>
-          <%= link_to 'Destroy', patient_profile_procedures_hospitolizations_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%= link_to 'Destroy', i, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
   </tbody>

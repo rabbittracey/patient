@@ -16,6 +16,7 @@ class Patient < ActiveRecord::Base
   has_many :patient_profile_allergies,:dependent => :destroy
   has_many :family_histories, :dependent => :destroy
   has_many :patient_diagnosed_conditions, :dependent => :destroy
+  has_many :patient_profile_symptoms, :dependent => :destroy
 
   validates :user_id, presence: true
 

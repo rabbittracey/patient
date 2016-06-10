@@ -53,9 +53,17 @@ class PatientProfileProceduresHospitolizationsController < ApplicationController
 
   end
   def destroy
-    @profile_procedures_hospitolizationn=PatientProfileProceduresHospitolization.find_by_id(params[:id])
+
+
+
+
+    @profile_procedures_hospitolization=PatientProfileProceduresHospitolization.find_by_id(params[:id])
     @profile_procedures_hospitolization.destroy
-    redirect_to intake_index_path
+
+    #if there is non-record, should redirect to a different place
+    redirect_to patient_profile_procedures_hospitolizations_path
+
+
 
   end
 

@@ -1,90 +1,27 @@
 
-
-
-<div class="container">
-  <div class="welcome_background">
-    <h2>Welcome! </h2>
-
-
+<!-- Header -->
+<header>
+  <div class="container">
     <div class="row">
+      <div class="col-lg-12">
+        <img class="img-responsive" src="/images/profile.png" alt="">
+        <div class="intro-text">
+          <span class="name">Welcome</span>
+          <hr class="star-light">
+          <span class="skills">
+             <%= link_to "Sign in", new_user_session_path(@user) ,class:"btn  btn-warning"%>
 
-      <div class="col-sm-6 col-md-6 col-lg-6">
+            <%= link_to "Sign up", new_user_registration_path(@user) ,class:"btn btn-warning"%>
+            <%=  link_to "Sign out", destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete, class:"btn btn-warning"%>
 
-
-        <h4>Sign in as a patient</h4>
-        <%= image_tag "2.png",  class: "img-responsive"  %>
-
-
-
-
-
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3 ">
-            <% if user_signed_in? %>
-                <div class="col-xs-6 col-xs-offset-3 ">
-                <%=  link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete %>
-                </div>
-
-            <% else %>
-                <div class="col-xs-6  ">
-                <%= link_to "Sign in", new_user_session_path(@user) %>
-                </div>
-                <div class="col-xs-6  ">
-                <%= link_to "Sign up", new_user_registration_path(@user) %>
-                </div>
-
-
-                <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p>
-            <% end %>
-          </div>
-
-
+           </span>
         </div>
-
       </div>
-
-
-
-      <div class="col-sm-6 col-md-6 col-lg-6">
-
-
-        <h4>Sign in as a provider</h4>
-        <%= image_tag "1.png",  class: "img-responsive"  %>
-
-
-
-
-
-
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3 ">
-            <% if user_signed_in? %>
-              <div class="col-xs-6 col-xs-offset-3 ">
-                <%=  link_to 'Sign out', destroy_user_session_path(:authenticity_token => form_authenticity_token()), :method => :delete %>
-              </div>
-
-            <% else %>
-              <div class="col-xs-6  ">
-                <%= link_to "Sign in", new_user_session_path(@user) %>
-              </div>
-              <div class="col-xs-6  ">
-                <%= link_to "Sign up", new_user_registration_path(@user[:user_type => "1"]) %>
-              </div>
-
-                <p class="notice"><%= notice %></p>
-                <p class="alert"><%= alert %></p>
-            <% end %>
-           </div>
-
-        </div>
-
-      </div>
-
-
-
     </div>
-
   </div>
 
-</div>
+</header>
+
+
+
+

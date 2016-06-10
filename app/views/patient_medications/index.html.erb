@@ -6,12 +6,13 @@
     <!--this is the code for the table listing the immunization information-->
 	
  <div class="col-sm-12 col-md-8 col-md-offset-2">
-			<h2>current medications</h2>
+
            <br/></br>
 
 
 
               <table class="table table-striped table-hover table-responsive">
+                <h3>current medications</h3>
     <thead >
       <tr class="success">
         <th>Medication Name</th>
@@ -39,6 +40,37 @@
           <%end%>
     </tbody>
   </table>
+
+
+   <table class="table table-striped table-hover table-responsive">
+     <h3>Past Medications</h3>
+     <thead >
+     <tr class="success">
+       <th>Medication Name</th>
+       <th>Date Started</th>
+       <th>Dosage</th>
+       <th>Frequency</th>
+       <th>Prescribed By</th>
+       <th>Reminder</th>
+       <th>Views</th>
+     </tr>
+     </thead>
+     <tbody>
+     <% @patientmedications.each do |i|%>
+         <tr>
+
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+
+         </tr>
+     <%end%>
+     </tbody>
+   </table>
 
 						<div class="row">
 							<div class="col-xs-12">

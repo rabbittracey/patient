@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
 
-  <div class="row">
+
 
 
 
@@ -13,90 +13,70 @@
 
       <!-- first row-->
       <div class="row">
-        <div class="col-xs-12 col-sm-8 col-md-6">
-          <div class="form-inline">
-                        <div class="form-group">
-                        <%= f.label :administrator %>
-                        <%= f.text_field :administrator, class: "panel panel-default" %>
-                      </div>
-                        <div class="form-group">
-                          <%= f.label :date_administered %>
-                          <%= f.text_field :date_administered,class: "panel panel-default" %>
-
-                        </div>
-                        <div class="form-group">
-                          <%= f.label :ndc %>
-                          <%= f.text_field :ndc,class: "panel panel-default" %>
-
-                        </div>
-
-                        <div class="form-group">
-                          <%= f.label :notes %>
-                          <%= f.text_field :notes,class: "panel panel-default" %>
-
-                        </div>
-          </div>
-        </div>
-
-
-
 
         <div class="col-xs-12 col-sm-8 col-md-6">
-          <div class="form-inline">
-          <div class="form-group">
-            <%= f.label :reimmunization_due_date %>
-            <%= f.text_field :reimmunization_due_date ,class: "panel panel-default"%>
 
-          </div>
-            <div class="form-group">
-              <%= f.label :cpt_code %>
-              <%= f.text_field :cpt_code,class: "panel panel-default" %>
+
+
+                        <%= f.text_field :administrator, class: "panel panel-default",placeholder: "Administrator" %>
+
+
+                       <%= f.text_field :date_administered,class: "panel panel-default",placeholder: "Administrated Date" %>
+
+
+
+
+                          <%= f.text_field :ndc,class: "panel panel-default",placeholder: "NDC code" %>
+
+
+                          <%= f.text_field :notes,class: "panel panel-default" ,placeholder: "Notes"%>
+
+
+
+            <%= f.text_field :reimmunization_due_date ,class: "panel panel-default",placeholder: "Reimmunization Date"%>
+
+
+
+              <%= f.text_field :cpt_code,class: "panel panel-default",placeholder: "CPT Code" %>
+
+
+
+              <%= f.text_field :cvx_codx,class: "panel panel-default",placeholder: "CVX Code" %>
+
+
+              <%= f.text_field :hcpcs_code,class: "panel panel-default" ,placeholder: "HCPCS Code"%>
 
             </div>
-            <div class="form-group">
-              <%= f.label :cvx_codx %>
-              <%= f.text_field :cvx_codx,class: "panel panel-default" %>
 
-            </div>
-            <div class="form-group">
-              <%= f.label :hcpcs_code %>
-              <%= f.text_field :hcpcs_code,class: "panel panel-default" %>
 
-            </div>
 
-        </div>
-        </div>
+
+
+
+
+
+
+
+
+
       </div>
-
-
-
-
-
-
-
-
-
+      <div class="row">
 
 
 
         <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-1">
-        <%= f.submit "Sumbit", class: "btn btn-block btn-info "%>
+        <%= f.submit "Sumbit", class: "btn btn-info "%>
+
+
+        <%= link_to("Cancel", patient_immunizations_path(f), class: "btn  btn-warning ") %>
 
       </div>
-        <div class="col-xs-12 col-sm-8 col-md-4 col-md-offset-1">
-        <%= link_to("Cancel", patient_immunizations_path(f), class: "btn btn-block btn-warning ") %>
+
 
       </div>
-
-
-
 
 
     <%end %>
 
-  </div>
 
-
-
-  <div class="container">
-
+</div>

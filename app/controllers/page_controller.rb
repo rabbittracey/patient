@@ -8,5 +8,7 @@ class PageController < ApplicationController
   end
 
   def about
+    @user=current_user
+    @patient=Patient.find_by_user_id(@user)
   end
 end

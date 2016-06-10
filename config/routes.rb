@@ -38,5 +38,6 @@ Rails.application.routes.draw do
   resources :patient_immunizations
   resources :patient_diagnosed_conditions
   resources :patient_medications
+  resources :patient_profile_symptoms
 
 end

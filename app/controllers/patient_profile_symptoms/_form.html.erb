@@ -1,0 +1,25 @@
+<%= form_for @profile_symptom do |f| %>
+    <div class="col-md-12 column">
+      <div class="box box-solid box-success collapsed-box">
+        <div class="box-header with-border">
+          <h3 class="box-title bg-info">current and recent symptoms</h3>
+          <div class="box-tools pull-right">
+            <a class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-plus"></i></a>
+          </div>
+        </div>
+        <div class="box-body patientProfileInfo">
+            <div class="col-xs-12">
+             <%= f.label :symptom_description %>
+              <%= f.select(:symptom_description, options_for_select([['Itching'], ['Yellow Skin'], ['Rash'],['Changing Mole'],['Back Pain'],['Swelling in Muscle'],['Loss of Muscle Strength'], ['Swollen joints'], ['Painful Joints'], ['Frequent urination'], ['Difficulty Controlling Urine'], ['Difficulty Passing Urine'], ['Burning While Urinating'], ['Blood in Urine'], ['Black_Tar_like Bowel Movements'], ['Rectal bleeding'], ['Change in Bowel Habits'], ['Constipation'], ['Diarrhea'], ['Abdominal Swelling'], ['Cramps'], ['Abdominal Pain'], ['Vomiting Blood'], ['Vomiting'], ['Nausea'], ['Difficulty Swallowing'], ['Indigestion or Heartburn'], ['Poor Appetite']]),{},class: "form-control",placeholder: "symptom name") %>
+
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <%= f.submit "Sumbit", class: 'btn  btn-primary'%>
+    </div>
+    <div class="col-xs-6">
+      <%= link_to("Cancel", patient_profile_symptoms_path, class: "btn  btn-warning ") %>
+    </div>
+<%end%>

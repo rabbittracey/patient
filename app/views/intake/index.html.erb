@@ -271,6 +271,7 @@
     </div>
 
 
+
     <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -285,33 +286,41 @@
               <div class="modal-body">
                 <h2>Family History</h2>
                 <hr class="star-primary">
-                <%= image_tag "portfolio/game.png",  class: "img-responsive img-centered" %>
+                <%= image_tag "portfolio/circus.png",  class: "img-responsive img-centered" %>
 
-                <p>This section is to input and record the your family history of medications and hospitalizations.</p>
 
 
                 <div class="row">
                   <div class="col-sm-4">
 
-                    <%= link_to "View", family_histories_path, class: "btn btn-block btn-success" %>
+                    <%= link_to "View", family_histories_path(@patient), class: "btn btn-block btn-success" %>
                   </div>
+                  <div class="col-sm-4">
+                    <%= link_to "New", new_family_history_path, class: "btn btn-block btn-primary" %>
 
+                  </div>
 
 
 
                   <div class="col-sm-4">
 
-                    <%= link_to("Cancel", intake_index_path(@patient), class: "btn btn-block btn-warning ") %>
+                    <%= link_to("Cancel", intake_index_path, class: "btn btn-block btn-warning ") %>
 
                   </div>
 
 
+                </div>
 
+
+
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
     <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -324,32 +333,45 @@
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
-                <h2>My care community</h2>
+                <h2>Current Symptoms</h2>
                 <hr class="star-primary">
                 <%= image_tag "portfolio/safe.png",  class: "img-responsive img-centered" %>
 
-                <p>Use this area of the page to describe </p>
-                <ul class="list-inline item-details">
-                  <li>1
-                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                    </strong>
-                  </li>
-                  <li>2
-                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                    </strong>
-                  </li>
-                  <li>3
-                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                    </strong>
-                  </li>
-                </ul>
-                <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+
+                <div class="row">
+                  <div class="col-sm-4">
+
+                    <%= link_to "View", patient_profile_symptoms_path(@patient), class: "btn btn-block btn-success" %>
+                  </div>
+                  <div class="col-sm-4">
+                    <%= link_to "New", new_patient_profile_symptom_path, class: "btn btn-block btn-primary" %>
+
+                  </div>
+
+
+
+                  <div class="col-sm-4">
+
+                    <%= link_to("Cancel", intake_index_path, class: "btn btn-block btn-warning ") %>
+
+                  </div>
+
+
+                </div>
+
+
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
+
+
 
 <%end%>
 
